@@ -17,3 +17,6 @@ shell: clean
 
 exclude_migrations: clean
 	rm **/migrations/[0-9]*.py
+
+migrate_production:
+	python manage.py migrate --settings=degustoo.settings_production
