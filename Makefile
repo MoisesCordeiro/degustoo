@@ -20,3 +20,6 @@ exclude_migrations: clean
 
 migrate_production:
 	python manage.py migrate --settings=degustoo.settings_production
+
+collect_static:
+	python manage.py collectstatic
