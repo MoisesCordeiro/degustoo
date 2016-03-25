@@ -1,5 +1,5 @@
 """
-Django settings for degustoo project.
+Django settings for Degustoo project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -30,13 +30,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'degAuth',
     'core',
     'index',
     'administracao',
@@ -54,9 +54,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'degustoo.urls'
+ROOT_URLCONF = 'Degustoo.urls'
 
-WSGI_APPLICATION = 'degustoo.wsgi.application'
+WSGI_APPLICATION = 'Degustoo.wsgi.application'
 
 
 # Database
@@ -92,9 +92,13 @@ LANGUAGES = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
 
 # Custom configuration
-AUTH_USER_MODEL = 'core.Usuario'
-LOGIN_URL = 'index:login'
+AUTH_USER_MODEL = 'degAuth.Usuario'    # custom user
+LOGIN_URL = 'index:login'           # custom login
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
 #DEFAULT_CHARSET = 'UTF-8'

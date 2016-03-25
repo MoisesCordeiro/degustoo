@@ -6,16 +6,30 @@ from django.views.generic import View
 from django.http import Http404, JsonResponse
 from django.shortcuts import render, render_to_response, get_object_or_404, redirect
 
-from forms import *
-from core.models import Usuario, Endereco
+from administracao.forms import *
+from degAuth.models import Usuario
+from core.models import Endereco
 from restaurante.models import Restaurante
 
-class Index(View):
+class AdminMixin(object):
+	admin = None
+	def dispatch(self, request, *args, **kwargs):
+		try:
+			user = request.user
+			if user.nivel == 0:
+				self.admin = user
+			else:
+				raise Http404("User has not permission to visit this page")
+		except Exception:
+			raise Http404("User has not permission to visit this page")
+		return super(AdminMixin, self).dispatch(request, *args, **kwargs)
+
+class Index(AdminMixin, View):
 	template = "administracao/index.html"
 	def get(self, request):
 		return render(request, self.template, {})
 
-class Registrar_Restaurante(View):
+class Registrar_Restaurante(AdminMixin, View):
 	template = "administracao/registrar_restaurante.html"
 	form_class = Form_Restaurante_Novo
 	
@@ -31,7 +45,7 @@ class Registrar_Restaurante(View):
 			telefone = form.cleaned_data['telefone']
 			nivel = form.cleaned_data['nivel']
 
-			usuario = Usuario.objects.create_user(email=email,password=password,nivel=nivel,telefone=telefone)
+			usuario = Usuario.objects.create_restaurant_user(email=email,password=password,telefone=telefone)
 
 			estado = form.cleaned_data['estado']
 			municipio = form.cleaned_data['municipio']

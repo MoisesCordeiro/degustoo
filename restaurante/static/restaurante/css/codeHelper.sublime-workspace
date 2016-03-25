@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Onet",
+				"OneToOne"
+			],
+			[
 				"ba",
 				"background-color"
 			],
@@ -510,10 +514,6 @@
 			[
 				"textAre",
 				"textArea2"
-			],
-			[
-				"butto",
-				"buttonJPanel"
 			]
 		]
 	},
@@ -526,14 +526,88 @@
 				"buffer_size": 3983,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Documentation",
+			"settings":
+			{
+				"buffer_size": 1680,
+				"line_ending": "Windows",
+				"name": "Documentation"
+			}
+		},
+		{
+			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Database.json",
+			"settings":
+			{
+				"buffer_size": 10291,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Restaurante",
+			"settings":
+			{
+				"buffer_size": 5444,
+				"line_ending": "Windows",
+				"name": "Restaurante"
+			}
+		},
+		{
+			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Administrador",
+			"settings":
+			{
+				"buffer_size": 13,
+				"line_ending": "Windows",
+				"name": "Administrador"
+			}
+		},
+		{
+			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Cliente",
+			"settings":
+			{
+				"buffer_size": 787,
+				"line_ending": "Windows",
+				"name": "Cliente"
+			}
+		},
+		{
+			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Core",
+			"settings":
+			{
+				"buffer_size": 69,
+				"line_ending": "Windows",
+				"name": "Core"
+			}
+		},
+		{
+			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/git_path",
+			"settings":
+			{
+				"buffer_size": 90,
+				"line_ending": "Windows",
+				"name": "https://github.com/MoisesCordeiro/degustoo.git"
+			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 58.0,
 		"selected_items":
 		[
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"text",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
 			[
 				"pack",
 				"Package Control: Install Package"
@@ -573,10 +647,6 @@
 			[
 				"h",
 				"Set Syntax: HTML"
-			],
-			[
-				"python",
-				"Set Syntax: Python"
 			],
 			[
 				"css",
@@ -668,6 +738,8 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Malquiel/Documents/Code-Helper/python/codecademy.py",
+		"/C/Users/Malquiel/Documents/Code-Helper/django/coding django",
 		"/C/Users/Malquiel/Documents/Code-Helper/DragonAge",
 		"/C/Users/Malquiel/Documents/Code-Helper/sublime/IdontKnow.txt",
 		"/C/Users/Malquiel/AppData/Roaming/Sublime Text 2/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
@@ -688,7 +760,6 @@
 		"/C/projetos/Degustoo/index/static/index/css/degustoo.css",
 		"/C/projetos/Degustoo/index/static/index/js/degustoo.js",
 		"/C/projetos/Degustoo/index/static/index/css/bootstrap.css",
-		"/C/Users/Malquiel/Documents/Code-Helper/django/coding django",
 		"/C/projetos/sizeup/WALL/relatório.txt",
 		"/C/projetos/sizeup/core/models.py",
 		"/C/projetos/sizeup/avaliavel/models.py",
@@ -794,8 +865,7 @@
 		"/C/wamp/www/Degustoo_2/module/Restaurante/view/layout/restaurante-layout.phtml",
 		"/C/django/degustoo2/restaurante/admin.py",
 		"/C/django/degustoo2/restaurante/models.py",
-		"/C/django/teste/deg/restaurante/admin.py",
-		"/C/django/teste/deg/restaurante/models.py"
+		"/C/django/teste/deg/restaurante/admin.py"
 	],
 	"find":
 	{
@@ -849,7 +919,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -864,14 +934,207 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								3981,
+								3648
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Documentation",
+					"settings":
+					{
+						"buffer_size": 1680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								152,
+								152
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Documentation",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Database.json",
+					"settings":
+					{
+						"buffer_size": 10291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6048,
+								6054
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Restaurante",
+					"settings":
+					{
+						"buffer_size": 5444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5312,
+								5180
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Restaurante",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2475.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Administrador",
+					"settings":
+					{
+						"buffer_size": 13,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Administrador",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Cliente",
+					"settings":
+					{
+						"buffer_size": 787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								787,
+								787
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Cliente",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/Core",
+					"settings":
+					{
+						"buffer_size": 69,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Core",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/git_path",
+					"settings":
+					{
+						"buffer_size": 90,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"auto_name": "https://github.com/MoisesCordeiro/degustoo.git",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -958,6 +1221,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 316.0,
+	"side_bar_width": 282.0,
 	"status_bar_visible": true
 }

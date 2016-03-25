@@ -56,6 +56,13 @@ class Form_Opcao_Import(forms.Form):
         super(Form_Opcao_Import, self).__init__(*args, **kwargs)
         self.fields['options'].queryset = cardapio.opcao_set.all()
         
+class Form_Item_Price_Generator(ModelForm):
+    preco = forms.DecimalField(max_digits=4, decimal_places=2, localize=True)
+    class Meta:
+        model = Item 
+        fields = ('preco',)
+        widgets= {'preco': forms.TextInput(attrs={'class':'form-control'}),}
+        labels = {'preco': 'Preco'}
 
 #################
 #### ITEM FORM

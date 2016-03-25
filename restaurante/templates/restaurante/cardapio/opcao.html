@@ -8,6 +8,14 @@
 		{{ form.as_p }}
 		<input type="submit" value="Importar">
 	</form>
+
+	{% if form_item_price %}
+		<form class="deg-editItem-form" action="{% url 'restaurante:gerar_item_preco' cardapio.id opcao.id %}" method="post">
+			{% csrf_token %}
+			{{ form_item_price.as_p }}
+			<input type="submit" value="Gerar preço">
+		</form>
+	{% endif %}
 	{{ response }}
 
 	<h2 class="deg_h2">Itens</h2>

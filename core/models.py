@@ -1,70 +1,9 @@
 from django.db import models
-
+from django.conf import settings
 # Create your models here.
-from django.contrib.auth.models import AbstractBaseUser
-from django.contrib.auth.models import BaseUserManager
-from django.contrib.auth.models import PermissionsMixin
-
-from django.utils import timezone
 
 from cliente.models import Cliente
 from restaurante.models import Restaurante
-
-# CUSTOM MANAGERS
-class MyManager(BaseUserManager):
-    def _create_user(self, email, password, nivel,
-                     is_admin, is_superuser, is_active, **kwargs):
-        if not email:
-            raise ValueError("Please enter you email account")
-        email = self.normalize_email(email)
-        usuario = self.model(
-                             email=email, password=password, nivel=nivel,
-                             is_admin=is_admin, is_superuser=is_superuser, is_active=is_active, **kwargs)
-        usuario.set_password(password)
-        usuario.save(using=self._db)
-        return usuario
-    
-    def create_user(self, email=None, password=None, nivel=1, **kwargs):
-        return self._create_user(email, password, nivel, False, False, True, **kwargs)
-    
-    def create_superuser(self, email, password, nivel=0, **kwargs):
-        return self._create_user(email, password, nivel, True, True, True, **kwargs)
-        
-
-# MODULES 
-class Usuario(AbstractBaseUser, PermissionsMixin):
-    NIVEL_CHOICES = (
-        (0, 'ADMIN'),
-        (1, 'CLIENTE'),
-        (2, 'RESTAURANTE'),
-        (3, 'RESTAURANTE DIAMANTE'),
-    )
-    
-    email = models.EmailField(unique=True)
-    telefone = models.CharField(max_length=50, blank=True)
-    nivel = models.IntegerField(choices=NIVEL_CHOICES)
-    avatar = models.OneToOneField("Imagem", blank=True, null=True)
-    is_active = models.BooleanField(default=False)
-    is_admin = models.BooleanField(default=False)
-    date_joined = models.DateTimeField(default=timezone.now)
-    
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELD = ['nivel']
-    
-    objects = MyManager()
-    
-    def get_full_name(self):
-        return self.email
-    
-    def get_short_name(self):
-        return self.email
-    
-    @property 
-    def is_staff(self):
-        return self.is_admin
-
-class Imagem(models.Model):
-    image = models.ImageField()
 
 class Endereco(models.Model):
     estado = models.CharField(max_length=50)
@@ -81,20 +20,21 @@ class Endereco(models.Model):
 class Voto(models.Model):
     KIND = (
             (0, "-"),
-            (1, "+")
+            (1, "+"),
     )
     
     QUANTITY = (
-            (1),
-            (2),
-            (3),
-            (4),
-            (5)
+            (1, 1),
+            (2, 2),
+            (3, 3),
+            (4, 4),
+            (5, 5),
     )
-    from_cliente = models.ForeignKey(Cliente)
-    to_restaurante = models.ForeignKey(Restaurante)
+
+    cliente = models.ForeignKey(Cliente)
+    restaurante = models.ForeignKey(Restaurante)
     tipo = models.IntegerField(choices=KIND)
-    quantidade = models.IntegerField()
+    quantidade = models.IntegerField(choices=QUANTITY)
 
     def __unicode__(self):
         return self.quantidade
@@ -103,21 +43,73 @@ class Comentario(models.Model):
     cliente = models.ForeignKey(Cliente)
     restaurante = models.ForeignKey(Restaurante)
     texto = models.TextField()
-    send_date = models.DateTimeField(default=timezone.now)
+    data_envio = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return self.texto
 
 class Resposta(models.Model):
-    cliente = models.ForeignKey(Cliente)
-    restaurante = models.ForeignKey(Restaurante)
+    sender = models.ForeignKey(settings.AUTH_USER_MODEL)
     comentario = models.ForeignKey(Comentario)
     texto = models.TextField()
-    send_date = models.DateTimeField(default=timezone.now)
+    data_envio = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return self.texto
 
 class Pedido(models.Model):
+    PAYMENT= (
+        (0, "Credit Card"),
+        (1, "Entrega"),
+    )
+
+    WITHDRAW = (
+        (0, "Pegar no caixa"),
+        (1, "Delivery"),
+    )
+
+    STATUS = (
+        (0, "Enviando"),
+        (1, "Preparando"),
+        (2, "Entregando"),
+        (3, "Estornado"),
+        (4, "Entregue"),
+    )
+
     cliente = models.ForeignKey(Cliente)
     restaurante = models.ForeignKey(Restaurante)
+    observacao = models.CharField(max_length=500, blank=True)
+    forma_pagamento = models.IntegerField(choices=PAYMENT)
+    forma_retirada = models.IntegerField(choices=WITHDRAW)
+    status = models.IntegerField(choices=STATUS)
+    troco_para = models.DecimalField(max_digits=6, decimal_places=6, default=0, blank=True)
+    total = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    data_envio = models.DateTimeField(auto_now_add=True)
+
+    def get_payment_method(self):
+        pass
+
+    def get_withdraw_method(self):
+        pass
+
+    def get_status(self):
+        pass
+
+    def set_status(self, status):
+        pass
+
+    def get_change(self):
+        pass
+
+    def generate_total_price(self):
+        pass
+
+class Item_Pedido(models.Model):
+    # pedido = models.foreignKey(Pedido)
+    # itens = models.ManyToManyField("restaurante.Item")
+    # opcao = models.One
+    # subcardapios 
+    # combo 
+    # promocao 
+    # preco 
+    pass

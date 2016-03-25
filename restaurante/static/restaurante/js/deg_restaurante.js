@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
 	$(document).on("click", ".deg_fpanel_container", function(event){
 		$(this).children('.deg_fpanel').show();
 	});
@@ -9,7 +8,8 @@ $(document).ready(function(){
 	});
 
 
-	$(document).on(".deg-addCardapio-form, .deg-editCardapio-form, .deg-deleteCardapio-form", function(event){
+	$(document).on("submit", ".deg-addCardapio-form, .deg-editCardapio-form, .deg-deleteCardapio-form", function(event){
+	//$(document).on("submit", ".deg-editCardapio-form", function(event){
 		event.preventDefault();
 		$.post($(event.target).attr('action'), $(event.target).serialize(), function(json){
 			if(json.success){
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	});
 
 
-	$(document).on(".deg-addSubcardapio-form", function(event){
+	$(document).on("submit", ".deg-addSubcardapio-form", function(event){
 		event.preventDefault();
 		$.post($(event.target).attr('action'), $(event.target).serialize(), function(json){
 			if(json.success){
@@ -37,7 +37,6 @@ $(document).ready(function(){
 			}
 		}, "json");
 	});
-
 	
 });
 

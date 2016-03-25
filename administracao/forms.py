@@ -1,12 +1,11 @@
 from django import forms
 from django.forms import ModelForm
 
-from core.models import Usuario
+from degAuth.models import Usuario
 
 class Form_Restaurante_Novo(ModelForm):
 	CHOICES = (
 		(2, "Restaurante"),
-		(3, "Restaurante Diamante")
 	)
 	nivel = forms.ChoiceField(choices=CHOICES, widget=forms.Select(attrs={'class':'form-control'}))
 
