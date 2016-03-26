@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Delivery de restaurantes </title>
+	<meta charset="UTF-8">
+	<meta name="viewport"  content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="pedir, comida, delivery, região dos lagos, pizza, lanche, hamburguer, entrega, aplicativo, home, food, Cabo Frio, Búzios, São Pedro da Aldeia, Arraial do Cabo, Rio das Ostras, Araruama, Saquarema, Macaé, Campos dos Goytacazes">
+	<meta name="Description" content="Site e Aplicativo para pedir comida na região dos lagos, Cabo Frio, Buzios, Arraial do Cabo, São Pedro da Aldeia, Rio das Ostras"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<link rel="icon" href="img/icon 48px.png" type="image/x-icon"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/document.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip({delay:10});
+		});
+	</script>
+
+</head>
+
+<body>
+<div id="header-show-restaurants" class="header">
+	<div class="logo-header">	
+		<a class="main-logo" target="_top" href="index_1.html">Logo home</a>
+	</div>
+	<div class="delivery-name-city">
+		<p>Delivery em: Cidade - Estado</p>
+		<p>Rua e número - Bairro</p>
+	</div>
+	<div id="sign-find"><a class="nav" href="">Cadastrar|Entrar</a></div>
+</div>
+<!--sub navigation-->
+<div id="feature" class="sub-menu">
+	<div class="shell-subnavigation">
+		<div class="row">
+			<div class="col-md-3">
+				<a class="nav-found" href="#">
+				  <i class="fa fa-cutlery fa-2x"></i><br>
+					<span>Restaurantes</span>
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a class="nav-found" href="Restaurantes encontrados">
+				  <i class="fa fa-usd fa-2x"></i><br>
+					<span>Promoções</span>	
+				</a>				
+			</div>
+			<div class="col-md-3 desactiveted">
+				<a class="nav-found" href="Restaurantes encontrados" data-toggle="tooltip" title="Aguarde novidades!">
+				  <i class="fa fa-mobile fa-2x"></i><br>
+					<span>Pedir na mesa</span>	
+				</a>
+			</div>
+			<div class="col-md-3 desactiveted" >
+				<a class="nav-found" href="Restaurantes encontrados" data-toggle="tooltip" title="Aguarde novidades!">
+				  <i class="fa fa-hashtag fa-2x"></i><br>
+					<span>Eventos</span>	
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+ <form role="form">
+    <div class="search-filter-found">
+      <div class="shell-filter-found">
+       <span>Filtro:</span>
+       <select class="form-control"  id="sel1">
+        <option><b>Cardápio:</b> Todos</option>
+        <option>Massa Italiana</option>
+        <option>Pizza</option>
+        <option>Sushi</option>
+      </select>
+      </div>
+  </div>
+ </form>
+
+ <div class="featured restaurantes-container pagere">
+ 	<div class="shell">
+ 		<div class="deg-logore"> Logo</div>
+ 		<h2 > Nome do Restaurante</h2>
+ 		<h4>Tipo de cozinha</h4>
+ 		<div class="info">
+ 			<input name="star1" type="radio" class="star"/> 
+ 			<input name="star1" type="radio" class="star"/> 
+ 			<input name="star1" type="radio" class="star"/> 
+ 			<input name="star1" type="radio" class="star"/>
+ 			<input name="star1" type="radio" class="star"/>
+ 			<span style=" font-size: 18px;">0 Avaliações</span>
+ 		</div>
+ 		<div class="info-details">
+ 			<span>Tempo estimado</span>
+ 			<span>Taxa de entrega</span>
+ 			<span>Valor mínimo do pedido</span>
+ 		</div>
+ 			<div class="info-details valours">
+ 			<span style="margin-left:35px;">0 min.</span>
+ 			<span style="margin-left:55px;">R$ 0,00</span>
+ 			<span style="margin-left:75px;">R$ 0,00</span>
+ 		</div>
+	</div>
+ </div>  
+
+ <div class="deg-line"></div>
+
+ <div class="row main-content">
+ 	<div class="col-md-4 left">
+ 		<p>Menu</p>
+ 		<hr>
+ 		<ul class="side-bare">
+ 			<li>
+				<a href="">Pizzas</a>
+ 			</li><br>
+ 			<hr width="100%">
+ 				<li>
+				<a href="">Pizzas</a>
+ 			</li><br>
+ 			<hr>
+ 		</ul>
+ 		
+ 	</div>
+ 	<div class="col-md-4 center">
+ 			<div class="row re-content">
+ 				<div class="col-md-4 vertical-line">
+					<a class="deg-navre" href="#">Cardápio</a>
+				</div>
+ 				<div class="col-md-4 vertical-line">
+ 					<a class="deg-navre" href="#">Avaliações</a>
+				</div>
+ 				<div class="col-md-4 right-line">
+ 					<a class="deg-navre" href="#">Informações</a>
+ 				</div>
+			</div>
+ 	</div>
+ 	<div class="col-md-4 left"></div>
+ 	<!--Footer-->
+<div class="footer">
+	<footer>
+		<div class="footer-left">
+			<div class="footer-logo">
+				<a href="index_1.html"  class="logo-footer" title="Degustoo">Degustoo</a>
+		</div>	
+
+		<div class="coln">
+			<ul class="coln1">
+				<li><a href=""><strong>Sobre a DegusToo</strong></a></li>
+				<li><a target="_blank" href="termosecondicoes.html">Termos e condições de uso</a></li>
+				<li><a href="">Privacidade</a></li>
+			</ul>
+
+			<ul class="coln2">
+				<li><a href=""><strong>Donos de Restaurantes</strong></a></li>
+				<li><a href="">Sobre o DegusToo</a></li>
+				<li><a href="">Cadastre-se</a></li>
+			</ul>
+
+			<ul class="coln3">
+				<li><a href=""><strong>Contato</strong></a></li>
+				<li><a href="">Como pedir</a></li>
+				<li><a href="">Fale conosco</a></li>
+				<li><a href="">Trabalhe conosco</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class="right">
+			<div class="socialnet">
+				<a target="_blank" href="https://www.facebook.com/degustoo/?fref=ts">facebook</a>
+			</div>
+			<div class="copyright">
+				<p>&copy;&nbsp;copyrigth 2015 - DegusToo - Todos os direitos reservados.</p>
+				<p>DegusToo.com.br Agência de Restaurantes Online Ltda.</p>
+			</div>
+		</div>
+	</footer>
+</div>
+ </div>
+</body>

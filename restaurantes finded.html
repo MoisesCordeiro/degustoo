@@ -12,12 +12,18 @@
 
 	<link rel="icon" href="img/icon 48px.png" type="image/x-icon"/>
 	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="js/document.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip({delay:10});
+		});
+	</script>
 
 </head>
 
@@ -37,19 +43,28 @@
 	<div class="shell-subnavigation">
 		<div class="row">
 			<div class="col-md-3">
-				<a class="nav-found" href="Restaurantes encontrados">
-					<i></i>
+				<a class="nav-found" href="#">
+				  <i class="fa fa-cutlery fa-2x"></i><br>
 					<span>Restaurantes</span>
 				</a>
 			</div>
 			<div class="col-md-3">
-				<span>Promoções</span>					
+				<a class="nav-found" href="Restaurantes encontrados">
+				  <i class="fa fa-usd fa-2x"></i><br>
+					<span>Promoções</span>	
+				</a>				
 			</div>
-				<div class="col-md-3">
-				<span>Pedir na Mesa</span>	
+			<div class="col-md-3 desactiveted">
+				<a class="nav-found" href="Restaurantes encontrados" data-toggle="tooltip" title="Aguarde novidades!">
+				  <i class="fa fa-mobile fa-2x"></i><br>
+					<span>Pedir na mesa</span>	
+				</a>
 			</div>
-			<div class="col-md-3">
-				<span>Eventos</span>	
+			<div class="col-md-3 desactiveted" >
+				<a class="nav-found" href="Restaurantes encontrados" data-toggle="tooltip" title="Aguarde novidades!">
+				  <i class="fa fa-hashtag fa-2x"></i><br>
+					<span>Eventos</span>	
+				</a>
 			</div>
 		</div>
 	</div>
@@ -105,7 +120,7 @@
 	<i class="status-open"></i>
 </h2>
 
-<div id="featured" class="restaurantes-container">
+<div class="fetured restaurantes-container">
 	<div class="shell">
 		<div class="row">
 			<div class="col-md-4">
@@ -114,7 +129,8 @@
 					<h3>Restaurante Name - Bairro</h3>
 					<h4>(s)Tipo de Cozinha</h4>
 					<div class="info">
-						Tempo médio - Avaliações
+						<i class="fa fa-clock-o"></i>&nbsp;- 50min&nbsp; &nbsp; &nbsp; <i class="fa fa-star-o"></i>
+						&nbsp; &nbsp; &nbsp; 0 Avaliações
 					</div>
 					<button class="order">Pedir</button>
 				</div>
@@ -126,7 +142,8 @@
 					<h3>Restaurante Name - Bairro</h3>
 					<h4>(s)Tipo de Cozinha</h4>
 					<div class="info">
-						Tempo médio - Avaliações
+						<i class="fa fa-clock-o"></i>&nbsp;- 50min&nbsp; &nbsp; &nbsp; <i class="fa fa-star-o"></i>
+						&nbsp; &nbsp; &nbsp; 0 Avaliações
 					</div>
 					<button class="order">Pedir</button>					
 				</div>
@@ -138,7 +155,7 @@
 					<h3>Restaurante Name - Bairro</h3>
 					<h4>(s)Tipo de Cozinha</h4>
 					<div class="info">
-						Tempo médio - Avaliações
+						<i class="fa fa-clock-o"></i>&nbsp;- 50min&nbsp; &nbsp; &nbsp; <i class="fa fa-star-o"></i>&nbsp; &nbsp; &nbsp; 0 Avaliações
 					</div>
 					<button class="order">Pedir</button>				
 				</div>
@@ -151,7 +168,7 @@
 	<i class="status-open closed"></i>
 </h2>
 
-<div id="featured" class="restaurantes-container">
+<div class="featured restaurantes-container">
 	<div class="shell">
 		<div class="row">
 			<div class="col-md-4">
@@ -160,7 +177,8 @@
 					<h3>Restaurante Name - Bairro</h3>
 					<h4>(s)Tipo de Cozinha</h4>
 					<div class="info">
-						Tempo médio - Avaliações
+						<i class="fa fa-clock-o"></i>&nbsp;- 50min&nbsp; &nbsp; &nbsp; <i class="fa fa-star-o"></i>
+						&nbsp; &nbsp; &nbsp; 0 Avaliações
 					</div>
 					<button class="order see-menu">Ver Cardápio</button>
 				</div>
@@ -172,7 +190,8 @@
 					<h3>Restaurante Name - Bairro</h3>
 					<h4>(s)Tipo de Cozinha</h4>
 					<div class="info">
-						Tempo médio - Avaliações
+						<i class="fa fa-clock-o"></i>&nbsp;- 50min&nbsp; &nbsp; &nbsp; <i class="fa fa-star-o"></i>
+						&nbsp; &nbsp; &nbsp; 0 Avaliações
 					</div>
 					<button class="order see-menu">Ver Cardápio</button>					
 				</div>
@@ -184,7 +203,8 @@
 					<h3>Restaurante Name - Bairro</h3>
 					<h4>(s)Tipo de Cozinha</h4>
 					<div class="info">
-						Tempo médio - Avaliações
+					<i class="fa fa-clock-o"></i>&nbsp;- 50min&nbsp; &nbsp; &nbsp; <i class="fa fa-star-o"></i>
+					&nbsp; &nbsp; &nbsp; 0 Avaliações
 					</div>
 					<button class="order see-menu">Ver Cardápio</button>				
 				</div>
@@ -195,42 +215,43 @@
 
 <!--Footer-->
 <div class="footer">
-<footer>
-<div class="footer-left">
-<div class="footer-logo">
-	<a href="index_1.html"  class="logo-footer" title="Degustoo">Degustoo</a>
-</div>	
+	<footer>
+		<div class="footer-left">
+			<div class="footer-logo">
+				<a href="index_1.html"  class="logo-footer" title="Degustoo">Degustoo</a>
+		</div>	
 
-<div class="coln">
-<ul class="coln1">
-	<li><a href=""><strong>Sobre a DegusToo</strong></a></li>
-	<li><a target="_blank" href="termosecondicoes.html">Termos e condições de uso</a></li>
-	<li><a href="">Privacidade</a></li>
-</ul>
+		<div class="coln">
+			<ul class="coln1">
+				<li><a href=""><strong>Sobre a DegusToo</strong></a></li>
+				<li><a target="_blank" href="termosecondicoes.html">Termos e condições de uso</a></li>
+				<li><a href="">Privacidade</a></li>
+			</ul>
 
-<ul class="coln2">
-	<li><a href=""><strong>Donos de Restaurantes</strong></a></li>
-	<li><a href="">Sobre o DegusToo</a></li>
-	<li><a href="">Cadastre-se</a></li>
-</ul>
+			<ul class="coln2">
+				<li><a href=""><strong>Donos de Restaurantes</strong></a></li>
+				<li><a href="">Sobre o DegusToo</a></li>
+				<li><a href="">Cadastre-se</a></li>
+			</ul>
 
-<ul class="coln3">
-	<li><a href=""><strong>Contato</strong></a></li>
-	<li><a href="">Como pedir</a></li>
-	<li><a href="">Fale conosco</a></li>
-	<li><a href="">Trabalhe conosco</a></li>
-</ul>
+			<ul class="coln3">
+				<li><a href=""><strong>Contato</strong></a></li>
+				<li><a href="">Como pedir</a></li>
+				<li><a href="">Fale conosco</a></li>
+				<li><a href="">Trabalhe conosco</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class="right">
+			<div class="socialnet">
+				<a target="_blank" href="https://www.facebook.com/degustoo/?fref=ts">facebook</a>
+			</div>
+			<div class="copyright">
+				<p>&copy;&nbsp;copyrigth 2015 - DegusToo - Todos os direitos reservados.</p>
+				<p>DegusToo.com.br Agência de Restaurantes Online Ltda.</p>
+			</div>
+		</div>
+	</footer>
 </div>
-</div>
-<div class="right">
-<div class="socialnet">
-	<a target="_blank" href="https://www.facebook.com/degustoo/?ref=hl">facebook</a>
-<div>
-<div class="copyright">
-	<p>&copy;&nbsp;copyrigth 2015 - DegusToo - Todos os direitos reservados.</p>
-	<p>DegusToo.com.br Agência de Restaurantes Online Ltda.</p>
-</div>
-</div>
-</footer>
 </div>
 </body>

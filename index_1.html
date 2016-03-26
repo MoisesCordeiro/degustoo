@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Degustoo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"  content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="pedir, comida, delivery, região dos lagos, pizza, lanche, hamburguer, entrega, aplicativo, home, food, Cabo Frio, Búzios, São Pedro da Aldeia, Arraial do Cabo, Rio das Ostras, Araruama, Saquarema, Macaé, Campos dos Goytacazes">
+	<meta name="Description" content="Site e Aplicativo para pedir comida na região dos lagos, Cabo Frio, Buzios, Arraial do Cabo, São Pedro da Aldeia, Rio das Ostras"/>
+	<link rel="icon" href="img/icon 48px.png" type="image/x-icon">
+	<link rel="stylesheet" href="css/index.css">
+	<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/document.js"></script>
+
+</head>
+
+<body>
+<div id="body">
+<div id="overlay">
+<!--begin header-->
+<header>
+<div id="header-index">
+<div class="logo-header">	
+	<a class="main-logo" target="_top" href="index_1.html">Logo home</a>
+</div>
+<div class="main-nav">	
+<nav>
+<ul id="menu" >	
+	<li class="mouseover"><a class="nav" id="nav" onmouseover="display('menu-about')" onmouseout="hide('menu-about')" href="">Sobre nós</a>
+<ul id="menu-about">
+	<li class="drop-link"><a class="drop-about" href=''>DegusToo</a></li> 
+	<li class="drop-link"><a class="drop-about" href=''>Termos e Condições de uso</a></li>
+	<li class="drop-link"><a class="drop-about" href=''>Privacidade</a></li>
+</ul>
+	</li>
+	<li class="mouseover"><a class="nav" id="owner" onmouseover="display('menu-owner')" onmouseout="displayDonos()" href="">Donos de Restaurantes</a></li>
+<ul id="menu-owner">
+	<li class="drop-link"><a class="drop-about" href=''>DegusToo</a></li> 
+	<li class="drop-link"><a class="drop-about" href=''>Cadastre-se</a></li>
+</ul>
+	<li class="mouseover"><a href="contact.html" class="nav" id="contact"  onmouseover="displayContact()" onmouseout="displayContato()" href="">Contato</a></li>
+<ul id="menu-contact">
+	<li class="drop-link"><a class="drop-about" href=''>Como pedir</a></li> 
+	<li class="drop-link"><a class="drop-about" href=''>Fale conosco</a></li>
+	<li class="drop-link"><a class="drop-about" href=''>Assessoria de Imprensa</a></li>
+	<li class="drop-link"><a class="drop-about" href=''>Trabalhe conosco</a></li>
+</ul>
+	<li class="mouseover"><a class="nav" href="">Cadastrar|Entrar</a></li>
+</ul>
+</nav>
+</div>	
+</div>
+
+<div id="header-container">
+<div id="hungry">
+	<h1 >Tá com fome? Peça sua comida online!</h1>
+	<h2>Os melhores restaurantes da sua cidade estão aqui.</h2>
+</div>
+
+<!--begin postcode-->
+<div id="postcode">
+	<input id="cepcode" type="tel" maxlength="8" name="postcode" placeholder="Informe seu CEP" keydown="alert()">
+	<button id="searchcep" type="submit" name="search CEP" value="Buscar Restaurantes">Buscar Restaurantes</button>
+	<a href=""><p>Não sabe seu CEP? Clique aqui!</p></a>
+</div>
+<div id="mobile-link">
+	<span>Disponível também em</span>
+	<a href="" id="play-store" target="_blank" title="Disponível na Play Store">Disponível na Play Store</a>
+	
+	<a href="" id="app-store" target="_blank" title="Disponível na App Store">Disponível na App Store</a>
+	
+	<a href="" id="windows-store" target="_blank" title="Disponível na Windows Store">Disponível na Windows Store</a>
+</div>
+</div>	
+</header>
+<!--end header-->
+</div>
+</div>	
+<!--end div id="body"-->
+<div id="textfoursteps">
+	<h2>Em apenas 4 passos simples você pede sua comida para poder degustar.</h2>
+</div>
+
+<div id="foursteps">
+	<ul>
+		<li id="step-one">
+			<div class="title">1º. Informe</div>
+			<div class="description">Informe seu Endereço para encontrar restaurantes.</div>
+		</li>
+
+		<li id="step-two">
+			<div class="title">2º. Escolha</div>
+			<div class="description">Escolha o Restaurante e comida que preferir no cardápio.</div>
+		</li>
+
+		<li id="step-three">
+			<div class="title">3º. Pague</div>
+			<div class="description">Pague de acordo com a opção que escolher. É fácil e rápido.</div>
+		</li>
+
+		<li id="step-four">
+			<div class="title">4º. Pronto</div>
+			<div class="description">O restaurante prepara seu pedido e entrega.</div>
+		</li>
+	</ul>
+</div>
+<!--end four steps-->
+<!--begin advertisement-->
+<div id="featured-restaurants">Restaurantes em destaque</div>
+
+<!--end advertisement-->
+<!--begin footer-->
+<div class="footer">
+<footer>
+<div class="footer-left">
+<div class="footer-logo">
+	<a href="index_1.html"  class="logo-footer" title="Degustoo">Degustoo</a>
+</div>	
+
+<div class="coln">
+<ul class="coln1">
+	<li><a href=""><strong>Sobre a DegusToo</strong></a></li>
+	<li><a target="_blank" href="termosecondicoes.html">Termos e condições de uso</a></li>
+	<li><a href="">Privacidade</a></li>
+</ul>
+
+<ul class="coln2">
+	<li><a href=""><strong>Donos de Restaurantes</strong></a></li>
+	<li><a href="">Sobre o DegusToo</a></li>
+	<li><a href="">Cadastre-se</a></li>
+</ul>
+
+<ul class="coln3">
+	<li><a href=""><strong>Contato</strong></a></li>
+	<li><a href="">Como pedir</a></li>
+	<li><a href="">Fale conosco</a></li>
+	<li><a href="">Trabalhe conosco</a></li>
+</ul>
+</div>
+</div>
+<div class="right">
+	<div class="socialnet">
+		<a target="_blank" href="https://www.facebook.com/degustoo/?fref=ts">facebook</a>
+	</div>
+	<div class="copyright">
+		<p>&copy;&nbsp;copyrigth 2015 - DegusToo - Todos os direitos reservados.</p>
+		<p>DegusToo.com.br Agência de Restaurantes Online Ltda.</p>
+	</div>
+</div>
+</footer>
+</div>
+		
+</body>
+</html>
