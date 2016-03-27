@@ -18,6 +18,15 @@ $(document).ready(function(){
 		}, "json");
 	});
 
+	$(document).on("submit", ".deg-addOpcao-form, .deg-editOpcao-form, .deg-deleteOpcao-form", function(event){
+		event.preventDefault();
+		$.post($(event.target).attr('action'), $(event.target).serialize(), function(json){
+			if(json.success){
+				_insertTableContent($('#deg-opcao-table'), json.result);
+			}
+		}, "json");
+	});
+
 
 	$(document).on("submit", ".deg-addSubcardapio-form", function(event){
 		event.preventDefault();

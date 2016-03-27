@@ -13,10 +13,10 @@ from django.conf import settings
 """
 
 class GerenciadorRestaurante(models.Model):
-    email = models.EmailField(unique=True)
-    telefone =  models.CharField(max_length=50, unique=True)
+    email = models.EmailField()
+    telefone =  models.CharField(max_length=50)
     nome_completo = models.CharField(max_length=100)
-    cpf = models.CharField(max_length=50, unique=True)
+    cpf = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.nome_completo

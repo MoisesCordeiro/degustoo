@@ -3,6 +3,7 @@ from django.contrib import admin
 from models import *
 
 # Register your models here.
+admin.site.register(GerenciadorRestaurante)
 admin.site.register(Restaurante)
 admin.site.register(Subcardapio)
 admin.site.register(Cardapio)

@@ -584,7 +584,7 @@
 			"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/git_path",
 			"settings":
 			{
-				"buffer_size": 90,
+				"buffer_size": 238,
 				"line_ending": "Windows",
 				"name": "https://github.com/MoisesCordeiro/degustoo.git"
 			}
@@ -1120,15 +1120,15 @@
 					"file": "/C/Users/Malquiel/Documents/Code-Helper/Projects/Degustoo/git_path",
 					"settings":
 					{
-						"buffer_size": 90,
+						"buffer_size": 238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								90,
-								90
+								181,
+								181
 							]
 						],
 						"settings":

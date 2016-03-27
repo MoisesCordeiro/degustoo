@@ -59,3 +59,15 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     @property 
     def is_staff(self):
         return self.is_admin
+
+    @property
+    def is_client(self):
+        if self.nivel == 1:
+            return True
+        return False
+
+    @property
+    def is_restaurant(self):
+        if self.nivel == 2:
+            return True
+        return False

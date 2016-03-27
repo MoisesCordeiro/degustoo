@@ -29,6 +29,21 @@ class Registrar(View):
             # save user on database
         return render(request, self.template, {'form':form})
 
+class RegistroRestaurante(View):
+    template = "index/registro_restaurante.html"
+    form_class = Form_Restaurant_Register
+
+    def get(self, request):
+        form = self.form_class()
+        return render(request, self.template, {'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            # send email to Degustoo with the form data
+            pass
+        pass
+
 class Login(View):
     template = "index/login.html"
     form_class = Form_Login

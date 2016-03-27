@@ -547,7 +547,7 @@
 			"file": "/E/Testes html/Testing float elements.html",
 			"settings":
 			{
-				"buffer_size": 2547,
+				"buffer_size": 2667,
 				"line_ending": "Windows"
 			}
 		}
@@ -888,8 +888,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								294,
+								294
 							]
 						],
 						"settings":
@@ -963,15 +963,15 @@
 					"file": "/E/Testes html/Testing float elements.html",
 					"settings":
 					{
-						"buffer_size": 2547,
+						"buffer_size": 2667,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								163,
-								132
+								1678,
+								1698
 							]
 						],
 						"settings":
@@ -981,7 +981,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1368.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

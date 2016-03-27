@@ -10,7 +10,10 @@ class RestauranteMixin(object):
     "Verify if there is some restaurant logged in"
     def dispatch(self, request, *args, **kwargs):
         try:
-            self.restaurante = request.user.restaurante
+            user = request.user
+            if user.is_restaurant:
+                self.user = user
+                self.restaurante = user.restaurante
         except Exception:
             raise Http404("You are not allowed visiting here")
         return super(RestauranteMixin, self).dispatch(request, *args, **kwargs)
