@@ -1,0 +1,4 @@
+Fundo =            (#C72E00)
+Localizar-me =     (#FF0000)
+Buscar Cep   =     (#990000)
+Adicionar Pedido = (#33CC33)
