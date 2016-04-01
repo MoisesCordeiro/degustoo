@@ -54,9 +54,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'Degustoo.urls'
+ROOT_URLCONF = 'degustoo.urls'
 
-WSGI_APPLICATION = 'Degustoo.wsgi.application'
+WSGI_APPLICATION = 'degustoo.wsgi.application'
 
 
 # Database
