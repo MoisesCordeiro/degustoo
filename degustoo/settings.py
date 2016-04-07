@@ -36,6 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'social.apps.django_app.default',
+
     'degAuth',
     'core',
     'index',
@@ -102,3 +105,8 @@ MEDIA_URL = '/media/'
 
 
 #DEFAULT_CHARSET = 'UTF-8'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
