@@ -1,9 +1,11 @@
-from django.db import models
+#coding: utf-8
+import hashlib
+from datetime import datetime 
 
-# Create your models here.
-from django.contrib.auth.models import AbstractBaseUser
-from django.contrib.auth.models import BaseUserManager
-from django.contrib.auth.models import PermissionsMixin
+from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.utils.encoding import smart_str
+
 
 # CUSTOM MANAGERS
 class MyManager(BaseUserManager):
@@ -27,6 +29,20 @@ class MyManager(BaseUserManager):
     
     def create_superuser(self, email, password, nivel=0, **kwargs):
         return self._create_user(email, password, nivel, True, True, True, **kwargs)
+
+    def create_user(self,email, username):
+        hashcode = hashlib.sha1(username+str(datetime.now())).hexdigest()
+
+        user = self._create_user(email=self.normalize_email(smart_str(hashcode)+"@socialconnect.com"),
+            password=hashcode, nivel=1, is_admin=False, is_superuser=False, is_active=True)
+
+        #from social.apps.django_app.default.models import UserSocialAuth
+        #from facepy import GraphAPI
+        #user_social = UserSocialAuth.objects.get(user=user)
+        #graph = GraphAPI(user.extra_data['access_token'])
+        #graph = graph.get('me?fields=id,email')
+        
+        return user
         
 
 # MODULES 

@@ -99,6 +99,7 @@ STATIC_URL = '/static/'
 # Custom configuration
 AUTH_USER_MODEL = 'degAuth.Usuario'    # custom user
 LOGIN_URL = 'index:login'           # custom login
+LOGIN_REDIRECT_URL = "/cliente/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -106,7 +107,43 @@ MEDIA_URL = '/media/'
 
 #DEFAULT_CHARSET = 'UTF-8'
 
+AUTHENTICATION_BACKENDS = (
+    'social.backends.open_id.OpenIdAuth',
+    'social.backends.google.GoogleOpenId',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.google.GoogleOAuth',
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.yahoo.YahooOpenId',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1697845613831574'
+SOCIAL_AUTH_FACEBOOK_SECRET = '5de44ef702287424162744362b461b5c'
+
+#TEMPLATE_CONTEXT_PROCESSORS = (
+#    'social.apps.django_app.context_processors.backends',
+#    'social.apps.django_app.context_processors.login_redirect',
+#)
+
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'social.apps.django_app.context_processors.backends',
-    'social.apps.django_app.context_processors.login_redirect',
+   'django.contrib.auth.context_processors.auth',
+   'django.core.context_processors.debug',
+   'django.core.context_processors.i18n',
+   'django.core.context_processors.media',
+   'django.core.context_processors.static',
+   'django.core.context_processors.tz',
+   'django.contrib.messages.context_processors.messages',
+   'social.apps.django_app.context_processors.backends',
+   'social.apps.django_app.context_processors.login_redirect',
+)
+
+SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
 )

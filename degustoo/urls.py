@@ -12,4 +12,6 @@ urlpatterns = patterns('',
     url(r'^administracao/', include('administracao.urls', namespace="administracao")),
     url(r'^restaurante/', include('restaurante.urls', namespace="restaurante")),
     url(r'^cliente/', include('cliente.urls', namespace="cliente")),
+
+    url('', include('social.apps.django_app.urls', namespace='social'))
 )
