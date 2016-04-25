@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 # Create your models here.
 
-from cliente.models import Cliente
+from clientes.models import Cliente
 from restaurante.models import Restaurante
 
 class Endereco(models.Model):

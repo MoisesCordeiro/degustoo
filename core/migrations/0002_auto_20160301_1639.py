@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('auth', '0001_initial'),
-        ('cliente', '0002_cliente_usuario'),
+        ('clientes', '0002_cliente_usuario'),
         ('core', '0001_initial'),
         ('restaurante', '0001_initial'),
     ]
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='resposta',
             name='cliente',
-            field=models.ForeignKey(to='cliente.Cliente'),
+            field=models.ForeignKey(to='clientes.Cliente'),
             preserve_default=True,
         ),
         migrations.AddField(
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='pedido',
             name='cliente',
-            field=models.ForeignKey(to='cliente.Cliente'),
+            field=models.ForeignKey(to='clientes.Cliente'),
             preserve_default=True,
         ),
         migrations.AddField(
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='comentario',
             name='cliente',
-            field=models.ForeignKey(to='cliente.Cliente'),
+            field=models.ForeignKey(to='clientes.Cliente'),
             preserve_default=True,
         ),
         migrations.AddField(
