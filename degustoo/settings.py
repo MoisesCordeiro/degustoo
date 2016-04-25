@@ -39,11 +39,11 @@ INSTALLED_APPS = (
 
     'social.apps.django_app.default',
 
-    'degAuth',
-    'core',
-    'index',
     'administracao',
-    'cliente',
+    'clientes',
+    'core',
+    'degAuth',
+    'index',
     'restaurante',
 )
 

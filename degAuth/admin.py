@@ -46,7 +46,7 @@ class UsuarioAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
         ('Personal info', {'fields': ('telefone',)}),
-        ('Permissions', {'fields': ('nivel',)}),
+        ('Permissions', {'fields': ('nivel','groups')}),
     )
 
     add_fieldsets = (

@@ -3,8 +3,13 @@ import hashlib
 from datetime import datetime 
 
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, Group
 from django.utils.encoding import smart_str
+
+from clientes.models import Cliente
+
+from social.apps.django_app.default.models import UserSocialAuth
+from facepy import GraphAPI
 
 
 # CUSTOM MANAGERS
@@ -35,13 +40,12 @@ class MyManager(BaseUserManager):
 
         user = self._create_user(email=self.normalize_email(smart_str(hashcode)+"@socialconnect.com"),
             password=hashcode, nivel=1, is_admin=False, is_superuser=False, is_active=True)
-
-        #from social.apps.django_app.default.models import UserSocialAuth
-        #from facepy import GraphAPI
-        #user_social = UserSocialAuth.objects.get(user=user)
-        #graph = GraphAPI(user.extra_data['access_token'])
-        #graph = graph.get('me?fields=id,email')
+        group = Group.objects.get(name='Cliente')
+        user.groups.add(group)
         
+        cliente = Cliente(usuario=user, nome='', sobrenome='')
+        cliente.save()
+
         return user
         
 
