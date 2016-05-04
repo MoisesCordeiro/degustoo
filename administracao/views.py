@@ -31,6 +31,16 @@ class Index(AdminMixin, View):
 	def get(self, request):
 		return render(request, self.template, {})
 
+class RestaurantesBloqueados(AdminMixin, View):
+	template = "administracao/restaurantes_bloqueados.html"
+	def get(self, request):
+		lista = []
+		usuarios = Usuario.objects.filter(is_active=False)
+		for user in usuarios:
+			if Restaurante.objects.filter(usuario=user.pk):
+				lista += user
+		return render(request, self.template, {'lista': lista})
+
 class Registrar_Restaurante(AdminMixin, View):
 	template = "administracao/registrar_restaurante.html"
 	form_class = Form_Restaurant_Register

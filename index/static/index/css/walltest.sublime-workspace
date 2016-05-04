@@ -981,7 +981,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1368.0,
+						"translation.y": 1098.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1048,7 +1048,7 @@
 		[
 			[
 				"",
-				"/C/projetos/Degustoo/Degustoo/Degustoo.sublime-project"
+				"/C/projetos/Degustoo/restaurante/static/restaurante/css/codeHelper.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -1,5 +1,5 @@
 """
-WSGI config for Degustoo project.
+WSGI config for degustoo project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

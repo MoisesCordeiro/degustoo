@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django import forms
-from models import *
+from degAuth.models import *
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 class UserCreationForm(forms.ModelForm):
@@ -47,6 +47,7 @@ class UsuarioAdmin(admin.ModelAdmin):
         (None, {'fields': ('email', 'password',)}),
         ('Personal info', {'fields': ('telefone',)}),
         ('Permissions', {'fields': ('nivel',)}),
+        ('Avtivated', {'fields': ('is_active',)}),
     )
 
     add_fieldsets = (

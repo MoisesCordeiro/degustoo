@@ -49,5 +49,5 @@ class Cliente(models.Model):
     sobrenome = models.CharField(max_length=30)
     imagem = models.ImageField("Foto Perfil", upload_to="user_profile/", blank=True, null=True)
     
-    def __unicode__(self):
+    def __str__(self):
         return self.nome

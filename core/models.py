@@ -11,10 +11,10 @@ class Endereco(models.Model):
     bairro = models.CharField(max_length=50) 
     rua = models.CharField(max_length=50)
     numero = models.CharField(max_length=50) 
-    complemento = models.CharField(max_length=50) 
+    complemento = models.CharField(max_length=50, blank=True) 
     cep = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.cep
     
 class Voto(models.Model):
@@ -36,7 +36,7 @@ class Voto(models.Model):
     tipo = models.IntegerField(choices=KIND)
     quantidade = models.IntegerField(choices=QUANTITY)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.quantidade
     
 class Comentario(models.Model):
@@ -45,7 +45,7 @@ class Comentario(models.Model):
     texto = models.TextField()
     data_envio = models.DateTimeField(auto_now_add=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.texto
 
 class Resposta(models.Model):
@@ -54,7 +54,7 @@ class Resposta(models.Model):
     texto = models.TextField()
     data_envio = models.DateTimeField(auto_now_add=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.texto
 
 class Pedido(models.Model):
@@ -78,6 +78,7 @@ class Pedido(models.Model):
 
     cliente = models.ForeignKey(Cliente)
     restaurante = models.ForeignKey(Restaurante)
+    endereco = models.ForeignKey(Endereco)
     observacao = models.CharField(max_length=500, blank=True)
     forma_pagamento = models.IntegerField(choices=PAYMENT)
     forma_retirada = models.IntegerField(choices=WITHDRAW)
@@ -87,29 +88,32 @@ class Pedido(models.Model):
     data_envio = models.DateTimeField(auto_now_add=True)
 
     def get_payment_method(self):
-        pass
+        return self.forma_pagamento
 
     def get_withdraw_method(self):
-        pass
+        return self.forma_retirada
 
     def get_status(self):
-        pass
+        return self.status
 
     def set_status(self, status):
-        pass
+        self.status = status
+        self.save()
 
     def get_change(self):
-        pass
+        return self.troco_para
 
     def generate_total_price(self):
-        pass
+        for i in self.getEvery_item():
+            self.total += i.preco
+        self.save()
+        
+    def getEvery_item(self):
+        return self.itemppedido_set.all()
 
-class Item_Pedido(models.Model):
-    # pedido = models.foreignKey(Pedido)
-    # itens = models.ManyToManyField("restaurante.Item")
-    # opcao = models.One
-    # subcardapios 
-    # combo 
-    # promocao 
-    # preco 
-    pass
+class Itempedido(models.Model):
+    pedido = models.ForeignKey(Pedido)
+    itens = models.ManyToManyField("restaurante.Item")
+    opcao = models.ForeignKey("restaurante.Opcao")
+    subcardapios = models.ForeignKey("restaurante.Subcardapio")
+    preco = models.DecimalField(max_digits=6, decimal_places=2, default=0)

@@ -19,7 +19,7 @@ class ClienteMixin(object):
 				raise Http404("User has not permission to visit this page")
 		except Exception:
 			raise Http404("User has not permission to visit this page")
-		return super(ClienteMixin, self).dispatch(request, *args, **kwargs)
+		return super(AdminMixin, self).dispatch(request, *args, **kwargs)
 
 class Index(ClienteMixin, View):
 	template = 'cliente/index.html'

@@ -1,5 +1,5 @@
 """
-Django settings for Degustoo project.
+Django settings for degustoo project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h9omfddn19q(51#u%9)ltghpf1fb099krvm3bmy-8762yny0gn'
+SECRET_KEY = '!_b0og3m$m_u@tdbis#4n6l8_*)8hpaj0hhkjz2e-oria13lq('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,9 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+)
 
-    'social.apps.django_app.default',
-
+DEGUSTOO_APPS = (
     'degAuth',
     'core',
     'index',
@@ -46,6 +46,15 @@ INSTALLED_APPS = (
     'cliente',
     'restaurante',
 )
+
+THIRD_PART_APPS = (
+    'rest_framework',
+    'compressor',
+    # 'hamlpy',
+    # 'djaml',
+)
+
+INSTALLED_APPS = INSTALLED_APPS + DEGUSTOO_APPS + THIRD_PART_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,9 +84,10 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
+#LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -85,65 +95,82 @@ USE_L10N = True
 
 USE_TZ = True
 
-LANGUAGES = (
-    ('en', 'English'),
-    ('pt-br', 'Portuguese'),
-    ('es', 'Spanish')
-)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
 STATIC_URL = '/static/'
 
-# Custom configuration
-AUTH_USER_MODEL = 'degAuth.Usuario'    # custom user
-LOGIN_URL = 'index:login'           # custom login
-LOGIN_REDIRECT_URL = "/cliente/"
-
+# Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+# Auth
+AUTH_USER_MODEL = 'degAuth.Usuario'     # custom user
+LOGIN_URL = 'index:login'               # custom login
 
-#DEFAULT_CHARSET = 'UTF-8'
+# E-Mail
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'email@gmail'
+EMAIL_HOST_PASSWORD = 'pass'
+EMAIL_PORT = 587
 
-AUTHENTICATION_BACKENDS = (
-    'social.backends.open_id.OpenIdAuth',
-    'social.backends.google.GoogleOpenId',
-    'social.backends.google.GoogleOAuth2',
-    'social.backends.google.GoogleOAuth',
-    'social.backends.twitter.TwitterOAuth',
-    'social.backends.yahoo.YahooOpenId',
-    'django.contrib.auth.backends.ModelBackend',
+CONTACT_EMAIL = 'wallacycleyton@gmail.com'
+
+#REST
+REST_FRAMEWORK = {
+    # 'DEFAULT_RENDERER_CLASSES':(
+    #     'rest_framework.renderers.JSONRenderer',
+    # )
+}
+
+#COMPRESSOR
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'compressor'),
 )
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1697845613831574'
-SOCIAL_AUTH_FACEBOOK_SECRET = '5de44ef702287424162744362b461b5c'
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 
-#TEMPLATE_CONTEXT_PROCESSORS = (
-#    'social.apps.django_app.context_processors.backends',
-#    'social.apps.django_app.context_processors.login_redirect',
-#)
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-   'django.contrib.auth.context_processors.auth',
-   'django.core.context_processors.debug',
-   'django.core.context_processors.i18n',
-   'django.core.context_processors.media',
-   'django.core.context_processors.static',
-   'django.core.context_processors.tz',
-   'django.contrib.messages.context_processors.messages',
-   'social.apps.django_app.context_processors.backends',
-   'social.apps.django_app.context_processors.login_redirect',
+    #'djangobower.finders.BowerFinder',
+    'compressor.finders.CompressorFinder',
 )
 
-SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookOAuth2',
-    'social.backends.twitter.TwitterOAuth',
+COMPRESS_ENABLED = True
+COMPRESS_ROOT = os.path.join(BASE_DIR, 'compressor')
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'sass --scss --compass {infile} {outfile}'),
+    ('text/x-sass', 'sass {infile} {outfile}'),
+    ('text/coffeescript', 'coffee -c --stdio'),
 )
 
-AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookOAuth2',
-    'social.backends.twitter.TwitterOAuth',
-    'django.contrib.auth.backends.ModelBackend',
+COMPRESS_URL = STATIC_URL
+
+#TEMPLATE
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'hamlpy.template.loaders.HamlPyFilesystemLoader',
+    'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+    'djaml.loaders.DjamlFilesystemLoader',
+    'djaml.loaders.DjamlAppDirectoriesLoader',
 )
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
+# TEMPLATE_LOADERS = (
+#     ('django.template.loaders.cached.Loader', (
+#         'djaml.loaders.DjamlAppDirectoriesLoader',
+#         'djaml.loaders.DjamlFilesystemLoader',
+#         'django.template.loaders.filesystem.Loader',
+#         'django.template.loaders.app_directories.Loader',
+#   )),
+# )

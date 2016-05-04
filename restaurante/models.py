@@ -16,9 +16,8 @@ class GerenciadorRestaurante(models.Model):
     email = models.EmailField()
     telefone =  models.CharField(max_length=50)
     nome_completo = models.CharField(max_length=100)
-    cpf = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome_completo
 
 class Restaurante(models.Model):
@@ -34,24 +33,32 @@ class Restaurante(models.Model):
     cnpj = models.CharField(max_length=50)
     imagem = models.ImageField("Logo Restaurante", upload_to="restaurant_profile", blank=True, null=True)
     tipo = models.IntegerField(choices=KINDS)
+    tipo_cozinha = models.CharField(max_length=100, blank=True)
+    faz_delivery = models.BooleanField(default=False)
 
-    def __unicode__(self):
+
+    def __str__(self):
         return self.nome
 
     def getEvery_menu(self):
-        return self.cardapio_set.all()
+        return self.cardapio_set.all().exclude(titulo__iexact='promoções').exclude(titulo__iexact='combos')
 
-    def menuTitleIsFree(self, title):
-        searchResult = self.cardapio_set.filter(titulo__iexact=title)
-        if len(searchResult) != 0:
-            return False
-        return True
+    def get_promocoes(self):
+        return self.cardapio_set.get(titulo='Promoções')
 
-    # def menuTitleIsUnique(self, title):
-    #     searchResult = self.cardapio_set.filter(titulo__iexact=title)
-    #     if len(searchResult) >= 1:
-    #         return False
-    #     return True
+    def get_combos(self):
+        return self.cardapio_set.get(titulo='Combos')
+
+    def hasMenu(self, title, exclusion_menu=None):
+        if exclusion_menu:
+            return self.cardapio_set.filter(titulo__iexact=title).exclude(pk=exclusion_menu.pk).exists()
+        return self.cardapio_set.filter(titulo__iexact=title).exists()
+
+    def save(self):
+        super(Restaurante, self).save()
+        if not self.hasMenu("Promoções") and not self.hasMenu("Combos"):
+            Cardapio.objects.create(restaurante=self, titulo="Promoções", tipo="Especial")
+            Cardapio.objects.create(restaurante=self, titulo="Combos", tipo="Especial")
 
 class Cardapio(models.Model):
     restaurante = models.ForeignKey(Restaurante)
@@ -59,8 +66,16 @@ class Cardapio(models.Model):
     titulo = models.CharField(max_length=50)
     tipo = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.titulo
+
+    @models.permalink
+    def get_absolute_url(self):
+        #from django.core.urlresolvers import reverse
+        #return reverse('restaurante:cardapio', kwargs={'card_id': self.pk}) 
+        return ('restaurante:cardapio', (), 
+            {'card_id':self.pk}
+        )
 
     def getEvery_item(self):
         return self.item_set.all()
@@ -93,7 +108,7 @@ class Subcardapio(models.Model):
     titulo = models.CharField(max_length=50)
     cardapio = models.ForeignKey(Cardapio)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.titulo
 
     def getEvery_item(self):
@@ -109,7 +124,7 @@ class Opcao(models.Model):
     rotulo = models.CharField(max_length=50)
     cardapio = models.ForeignKey(Cardapio)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.rotulo
 
     def get_label(self):
@@ -145,13 +160,13 @@ class Opcao(models.Model):
     
 class Item(models.Model):
     nome = models.CharField(max_length=50)
-    preco = models.DecimalField(max_digits=4, decimal_places=2, default=0)
+    preco = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     ingredientes = models.CharField(max_length=255, blank=True)
     cardapio = models.ForeignKey(Cardapio, blank=True, null=True)
     sub_cardapio = models.ForeignKey(Subcardapio, blank=True, null=True)
     opcao = models.ForeignKey(Opcao, blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome
 
     def get_name(self):
@@ -163,4 +178,3 @@ class Item(models.Model):
     def set_price(self, price):
         self.preco = price
         self.save()
-    

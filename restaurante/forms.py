@@ -18,6 +18,10 @@ class Form_Cardapio_Default(ModelForm):
             'tipo': forms.TextInput(attrs={'class':'form-control'}),
         }
 
+    def formatStrData(self):
+        self.cleaned_data['titulo'] = self.cleaned_data['titulo'].title()
+        self.cleaned_data['tipo'] = self.cleaned_data['tipo'].title()
+
 #################
 #### SUBCARDAPIO FORM
 #################

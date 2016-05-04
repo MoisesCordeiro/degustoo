@@ -1,10 +1,10 @@
-#-*- coding=UTF-8 -*-
 from django import forms
 from django.forms import ModelForm
 from django.utils.translation import ugettext as _
 
 from degAuth.models import Usuario
-from restaurante.models import GerenciadorRestaurante
+from restaurante.models import GerenciadorRestaurante, Restaurante
+from core.plugins.cnpj import Cnpj
 
 class Form_Registro(ModelForm):
 
@@ -26,41 +26,70 @@ class Form_Registro(ModelForm):
         if (pass1 and pass2) and (pass1 == pass2):
             return pass2
         else:
-            raise forms.ValidationError(_("Password"))
+            raise forms.ValidationError(_("Password fields do not match"))
 
-class Form_Restaurant_Register(ModelForm):
+class Form_Restaurant_Register(forms.Form):
     CHOICES = (
         (0, "Comum"),
         (1, "Diamante"),
     )
 
+    DO_DELIVERY = (
+        (True, 'Sim'),
+        (False, 'Não'),
+    )
+
     # Dados do responsável pelo restaurante
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control','placeholder':'E-mail do estabelecimento'}))
-    telefone = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Telefone do estabelecimento'}))
-    nome = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Nome do estabelecimento'}))
+    telefone = forms.RegexField(regex=r"^\d{8,20}$", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Telefone do estabelecimento'}))
+    nome = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Nome do estabelecimento'}))
     cnpj = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'CNPJ'}))
-    nivel = forms.ChoiceField(choices=CHOICES, widget=forms.Select(attrs={'class':'form-control','placeholder':'Nivel'}))
-    password1 = forms.CharField(min_length=6, label=_("Password"), max_length=16, widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':_('Password')}))
-    password2 = forms.CharField(min_length=6, label=_("Password confirmation"), max_length=16, widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':_('Password confirmation')}))
+    #password_a = forms.CharField(min_length=6, label=_("Password"), max_length=16, widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':_('Password')}))
+    #password_b = forms.CharField(min_length=6, label=_("Password confirmation"), max_length=16, widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':_('Password confirmation')}))
     
+    tipo_cozinha = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    faz_delivery = forms.ChoiceField(choices=DO_DELIVERY,widget=forms.Select(attrs={'class':'form-control'}))
+
     nome_completo_responsavel = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Nome completo do responsável'}))
     email_responsavel = forms.CharField(max_length=30, widget=forms.EmailInput(attrs={'class':'form-control','placeholder':'E-mail do responsável'}))
-    telefone_responsavel = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Telefone do responsável'}))
-    cpf_responsavel = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'CPF do responsável'}))
+    telefone_responsavel = forms.RegexField(regex=r"^\d{8,20}$", widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Telefone do responsável'}))
     
-
     estado = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Estado'}))
     municipio = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Municipio'}))
     bairro = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Bairro'}))
     rua = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Rua'}))
     numero = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Número'}))
-    complemento = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Complemento'}))
+    complemento = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Complemento'}), required=False)
     cep = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'CEP'}))
 
 
-    def clean_password2(self):
-        password1 = self.cleaned_data['password1']
-        password2 = self.cleaned_data['password2']
+    def clean_email(self):
+        email = self.cleaned_data['email']
+
+        if Usuario.objects.filter(email=email).exists():
+            raise forms.ValidationError('Email já registrado. Tente outro endereço.')
+        return email
+
+    def clean_telefone(self):
+        telefone = self.cleaned_data['telefone']
+
+        if Usuario.objects.filter(telefone=telefone).exists():
+            raise forms.ValidationError('Número de telefone já cadastrado. Tente outro número.')
+        return telefone
+
+    def clean_cnpj(self):
+        cnpj = self.cleaned_data['cnpj']
+
+        if Restaurante.objects.filter(cnpj=cnpj).exists():
+            raise forms.ValidationError('Número de cnpj em uso.')
+        validator = Cnpj()
+        if not validator.validate(cnpj):
+            raise forms.ValidationError('Número de cnpj inválido.')
+        return cnpj
+
+    def clean_password_b(self):
+        password1 = self.cleaned_data['password_a']
+        password2 = self.cleaned_data['password_b']
 
         if (password1 and password2) and (password1 == password2):
             return password2
@@ -69,7 +98,7 @@ class Form_Restaurant_Register(ModelForm):
 
     def clean_email_responsavel(self):
         email = self.cleaned_data['email_responsavel']
-        if not GerenciadorRestaurante.objects.filter(email=email):
+        if not GerenciadorRestaurante.objects.filter(email=email).exists():
             return email
         raise forms.ValidationError(_("Email already in use"))
 
@@ -80,21 +109,6 @@ class Form_Restaurant_Register(ModelForm):
             return telefone
         raise forms.ValidationError(_("Phone number already in use"))
 
-
-    def clean_cpf_responsavel(self):
-        cpf = self.cleaned_data['cpf_responsavel']
-        if not GerenciadorRestaurante.objects.filter(cpf=cpf):
-            return cpf
-        raise forms.ValidationError(_("CPF number already in use"))
-
-    class Meta:
-        model = Usuario
-        fields = ('email', 'telefone')
-        widgets = {
-            'email': forms.EmailInput(attrs={'class':'form-control'}),
-            'telefone': forms.TextInput(attrs={'class':'form-control'}),
-        }
-
 class Form_Login(forms.Form):
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}), label="Senha")
+    email = forms.EmailField()
+    password = forms.CharField()
