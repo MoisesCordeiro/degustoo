@@ -1,0 +1,1262 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bac",
+				"background-image: 〔property〕"
+			],
+			[
+				"back",
+				"background-color: 〔property〕"
+			],
+			[
+				"trans",
+				"transparencia"
+			],
+			[
+				"fad",
+				"fadeOut〔function〕"
+			],
+			[
+				"deg-ligh",
+				"deg-lightbox_container"
+			],
+			[
+				"wid",
+				"width: 〔property〕"
+			],
+			[
+				"ba",
+				"background-size"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"cpf",
+				"cpf_responsavel"
+			],
+			[
+				"fi",
+				"fields"
+			],
+			[
+				"passw",
+				"password2	statement"
+			],
+			[
+				"pa",
+				"password2	statement"
+			],
+			[
+				"pass",
+				"password1	statement"
+			],
+			[
+				"max",
+				"max_length	None"
+			],
+			[
+				"auto",
+				"auto_now_add	False"
+			],
+			[
+				"get",
+				"getEvery_item	function"
+			],
+			[
+				"getEve",
+				"getEvery_item"
+			],
+			[
+				"Ma",
+				"ManyToManyField	class"
+			],
+			[
+				"de",
+				"decimal_places	None"
+			],
+			[
+				"Text",
+				"TextInput	class"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"Email",
+				"EmailInput	class"
+			],
+			[
+				"min",
+				"min_length	None"
+			],
+			[
+				"build",
+				"buildItemOpcaoTable	function"
+			],
+			[
+				"Opcao",
+				"OpcaoMixin	class"
+			],
+			[
+				"Carda",
+				"CardapioMixin	class"
+			],
+			[
+				"Resta",
+				"RestauranteMixin	class"
+			],
+			[
+				"prepare",
+				"prepareAjaxSuccessData"
+			],
+			[
+				"buildItem",
+				"buildItemOpcaoTable"
+			],
+			[
+				"Opca",
+				"OpcaoMixin"
+			],
+			[
+				"Htt",
+				"HttpResponse	class"
+			],
+			[
+				"mi",
+				"mixins	module"
+			],
+			[
+				"sub",
+				"subcardapios	statement"
+			],
+			[
+				"prepa",
+				"prepareAjaxErrorMessage	function"
+			],
+			[
+				"a",
+				"ajax	module"
+			],
+			[
+				"da",
+				"dataLength	param"
+			],
+			[
+				"lower",
+				"lowerSubmenuTitle	statement"
+			],
+			[
+				"set",
+				"setPrice"
+			],
+			[
+				"lo",
+				"lowerOptionLabel	statement"
+			],
+			[
+				"getE",
+				"getEveryOptionFromMenu	function"
+			],
+			[
+				"chi",
+				"children〔function〕"
+			],
+			[
+				"_buil",
+				"_buildItemOpcaoTable	function"
+			],
+			[
+				"_bu",
+				"_buildItemTable	function"
+			],
+			[
+				"th",
+				"th	Tag"
+			],
+			[
+				"no",
+				"nome"
+			],
+			[
+				"C",
+				"CharField"
+			],
+			[
+				"nome",
+				"nome_fantasia"
+			],
+			[
+				"in",
+				"ingredientes"
+			],
+			[
+				"Cardapio",
+				"CardapioMixin"
+			],
+			[
+				"is",
+				"is_valid"
+			],
+			[
+				"_",
+				"_buildSubcardapioTable"
+			],
+			[
+				"render",
+				"render"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"res",
+				"restaurante"
+			],
+			[
+				"to",
+				"token"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"deg",
+				"deg_creator_form"
+			],
+			[
+				"mode",
+				"ModelForm"
+			],
+			[
+				"Item",
+				"ItemSubcardapioMixin"
+			],
+			[
+				"s",
+				"subcardapios"
+			],
+			[
+				"Ht",
+				"HttpResponse"
+			],
+			[
+				"Op",
+				"OpcaoMixin"
+			],
+			[
+				"Sub",
+				"SubcardapioMixin"
+			],
+			[
+				"ren",
+				"render"
+			],
+			[
+				"H",
+				"HttpResponse"
+			],
+			[
+				"Editar",
+				"EditarCardapio"
+			],
+			[
+				"grandezas",
+				"grandezas_variaveis"
+			],
+			[
+				"Form",
+				"FormGrandezaFixaDefault"
+			],
+			[
+				"Car",
+				"CardapioMixin"
+			],
+			[
+				"ex",
+				"except"
+			],
+			[
+				"Http",
+				"Http404"
+			],
+			[
+				"td",
+				"td"
+			],
+			[
+				"grande",
+				"grandezas_variaveis"
+			],
+			[
+				"gra",
+				"grandezas_fixas"
+			],
+			[
+				"ht",
+				"Http404"
+			],
+			[
+				"editar_carda",
+				"editar_cardapio_teste"
+			],
+			[
+				"item",
+				"item_list"
+			],
+			[
+				"Lo",
+				"LoginRequiredMixin"
+			],
+			[
+				"cl",
+				"cleaned_data"
+			],
+			[
+				"login",
+				"loginForm"
+			],
+			[
+				"fo",
+				"form-control"
+			],
+			[
+				"en",
+				"en"
+			],
+			[
+				"cardapio_",
+				"cardapio_id"
+			],
+			[
+				"car",
+				"cardapio"
+			],
+			[
+				"Gran",
+				"GrandezaVariavel"
+			],
+			[
+				"c",
+				"cnpj"
+			],
+			[
+				"user",
+				"useremail"
+			],
+			[
+				"Login",
+				"LoginForm"
+			],
+			[
+				"l",
+				"logout"
+			],
+			[
+				"aut",
+				"authenticate"
+			],
+			[
+				"is_",
+				"is_staff"
+			],
+			[
+				"User",
+				"UserChangeForm"
+			],
+			[
+				"Model",
+				"ModelForm"
+			],
+			[
+				"Usu",
+				"Usuario"
+			],
+			[
+				"Usua",
+				"UsuarioAdmin"
+			],
+			[
+				"t",
+				"timezone"
+			],
+			[
+				"card",
+				"card_id"
+			],
+			[
+				"is_s",
+				"is_string"
+			],
+			[
+				"class",
+				"class_name"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"__",
+				"__SITE_PATH"
+			],
+			[
+				"site",
+				"site_path"
+			],
+			[
+				"not",
+				"notification"
+			],
+			[
+				"num",
+				"numero_cartao"
+			],
+			[
+				"DB",
+				"DB_NAME"
+			],
+			[
+				"mysqli_",
+				"mysqli_connect"
+			],
+			[
+				"template",
+				"templateUrl"
+			],
+			[
+				"con",
+				"conta_tipo"
+			],
+			[
+				"error",
+				"error_empty_fields"
+			],
+			[
+				"conta",
+				"conta_tipo"
+			],
+			[
+				"ag",
+				"agencia"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"te",
+				"telefone"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"m",
+				"municipio"
+			],
+			[
+				"mysql",
+				"mysql"
+			],
+			[
+				"mys",
+				"mysql"
+			],
+			[
+				"mysql_",
+				"mysql_close"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"mysql_fe",
+				"mysql_fetch_assoc"
+			],
+			[
+				"Frase",
+				"FraseAdmin"
+			],
+			[
+				"Exe",
+				"ExercicioAdmin"
+			],
+			[
+				"Exer",
+				"Exercicio"
+			],
+			[
+				"Fra",
+				"FraseInline"
+			],
+			[
+				"url",
+				"urlpatterns"
+			],
+			[
+				"selec",
+				"selected_choice"
+			],
+			[
+				"ques",
+				"question_id"
+			],
+			[
+				"que",
+				"question_id"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/projetos/Degustoo/restaurante/admin.py",
+			"settings":
+			{
+				"buffer_size": 277,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/projetos/Degustoo/degAuth/models.py",
+			"settings":
+			{
+				"buffer_size": 2400,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/projetos/Degustoo/index/templates/index/base.html",
+			"settings":
+			{
+				"buffer_size": 4588,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/projetos/Degustoo/index/templates/index/base2.html",
+			"settings":
+			{
+				"buffer_size": 2470,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/projetos/Degustoo/index/static/index/css/degustoo.css",
+			"settings":
+			{
+				"buffer_size": 7374,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"package control install",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"HTML",
+				"Set Syntax: HTML"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"h",
+				"Set Syntax: HTML"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"md",
+				"Set Syntax: Markdown"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"PHP",
+				"Set Syntax: PHP"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"c+",
+				"Set Syntax: C++"
+			],
+			[
+				"c",
+				"Set Syntax: C"
+			],
+			[
+				"C+",
+				"Set Syntax: C++"
+			],
+			[
+				"jav",
+				"Set Syntax: Java"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: #!/usr/bin/env"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 631.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/projetos/Degustoo/index/templates/index/index.html",
+		"/C/projetos/Degustoo/restaurante/static/restaurante/js/deg_restaurante.js",
+		"/C/projetos/Degustoo/cliente/views.py",
+		"/C/projetos/Degustoo/restaurante/models.py",
+		"/C/projetos/Degustoo/administracao/forms.py",
+		"/C/projetos/Degustoo/restaurante/forms.py",
+		"/C/projetos/Degustoo/index/templates/index/login.html",
+		"/C/projetos/Degustoo/index/templates/index/registro_restaurante.html",
+		"/C/projetos/Degustoo/index/templates/index/registrar.html",
+		"/C/projetos/Degustoo/index/views.py",
+		"/C/projetos/Degustoo/index/forms.py",
+		"/C/projetos/Degustoo/index/urls.py",
+		"/C/projetos/Degustoo/index/static/index/css/degustoo.css",
+		"/C/projetos/Degustoo/index/templates/index/base.html",
+		"/C/projetos/Degustoo/restaurante/admin.py",
+		"/C/projetos/Degustoo/administracao/views.py",
+		"/C/projetos/Degustoo/Degustoo/__init__.py",
+		"/C/projetos/Degustoo/index/__init__.py",
+		"/C/projetos/Degustoo/degAuth/models.py",
+		"/C/projetos/Degustoo/restaurante/mixins.py",
+		"/C/projetos/Degustoo/restaurante/views_opcao.py",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/cardapio.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/opcao.html",
+		"/C/projetos/Degustoo/administracao/templates/administracao/registrar_restaurante.html",
+		"/C/projetos/Degustoo/restaurante/views_cardapio.py",
+		"/C/Python27/Lib/site-packages/Django-1.7.8-py2.7.egg/django/forms/fields.py",
+		"/C/Python27/Lib/site-packages/Django-1.7.8-py2.7.egg/django/forms/forms.py",
+		"/C/projetos/Degustoo/core/models.py",
+		"/C/projetos/Degustoo/administracao/models.py",
+		"/C/projetos/Degustoo/cliente/models.py",
+		"/C/projetos/Degustoo/Degustoo/settings.py",
+		"/C/projetos/Degustoo/restaurante/urls.py",
+		"/C/projetos/Degustoo/cliente/admin.py",
+		"/C/projetos/Degustoo/auth/tests.py",
+		"/C/projetos/Degustoo/degAuth/admin.py",
+		"/C/projetos/Degustoo/auth/models.py",
+		"/C/projetos/Degustoo/auth/admin.py",
+		"/C/projetos/Degustoo/core/admin.py",
+		"/C/projetos/Degustoo/restaurante/views_default.py",
+		"/C/projetos/Degustoo/restaurante/views_subcardapio",
+		"/C/projetos/degustoo_pedido.json",
+		"/C/projetos/Degustoo/administracao/admin.py",
+		"/C/projetos/Degustoo/core/views.py",
+		"/C/projetos/Degustoo/restaurante/static/restaurante/css/deg_restaurante.css",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/editar_opcao.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/lista_cardapio.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/index.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/itens/lista_item.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/base.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/base-card.html",
+		"/C/projetos/Degustoo/core/views/__init__.py",
+		"/C/projetos/Degustoo/restaurante/views/views_cardapio.py",
+		"/C/projetos/Degustoo/core/ajax.py",
+		"/C/projetos/Degustoo/restaurante/views/__init__.py",
+		"/C/projetos/Degustoo/administracao/views/views.py",
+		"/C/projetos/Degustoo/restaurante/views/mixins.py",
+		"/C/projetos/Degustoo/administracao/views/__init__.py",
+		"/C/projetos/Degustoo/restaurante/views/default.py",
+		"/C/projetos/Degustoo/restaurante/views/views.py",
+		"/C/projetos/Degustoo/restaurante/views/ajaxTables.py",
+		"/C/projetos/Degustoo/restaurante/ajaxTables.py",
+		"/C/projetos/Degustoo/restaurante/views/core.py",
+		"/C/projetos/Degustoo/restaurante/views.py",
+		"/C/projetos/Degustoo/core/ajaxTables.py",
+		"/C/Users/Malquiel/.ssh/id_rsa",
+		"/C/Users/Malquiel/.ssh/github_rsa.pub",
+		"/C/Users/Malquiel/.ssh/github_rsa",
+		"/C/projetos/Degustoo/index/static/index/js/degustoo.js",
+		"/C/Users/Malquiel/Documents/Code-Helper/sublime/IdontKnow.txt",
+		"/C/Users/Malquiel/AppData/Roaming/Sublime Text 2/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Users/Malquiel/AppData/Roaming/Sublime Text 2/Packages/Jedi - Python autocompletion/sublime_jedi.sublime-settings",
+		"/C/Users/Malquiel/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Malquiel/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/subcardapio.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/editar_subcardapio.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/editar_item.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/deletar_item.html",
+		"/C/projetos/Degustoo/index/static/index/fonts/glyphicons-halflings-regular.svg",
+		"/C/projetos/Degustoo/index/static/index/css/bootstrap.css",
+		"/C/Users/Malquiel/Documents/Code-Helper/django/coding django",
+		"/C/projetos/sizeup/WALL/relatório.txt",
+		"/C/projetos/sizeup/core/models.py",
+		"/C/projetos/sizeup/avaliavel/models.py",
+		"/C/projetos/sizeup/administrador/forms.py",
+		"/C/projetos/sizeup/administrador/views.py",
+		"/C/projetos/sizeup/administrador/urls.py",
+		"/C/projetos/sizeup/administrador/templates/administrador/pesquisar_avaliavel.html",
+		"/C/projetos/sizeup/administrador/templates/administrador/registro_avaliavel.html",
+		"/C/projetos/sizeup/sizeup/settings.py",
+		"/C/projetos/sizeup/core/admin.py",
+		"/C/projetos/sizeup/avaliavel/admin.py",
+		"/C/projetos/sizeup/sizeup/urls.py",
+		"/C/projetos/sizeup/avaliavel/views.py",
+		"/C/projetos/sizeup/avaliador/models.py",
+		"/C/projetos/sizeup/avaliador/admin.py",
+		"/C/projetos/Degustoo/core/forms.py",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapio/editar_cardapio.html",
+		"/D/teste.html",
+		"/C/projetos/Degustoo/restaurante/templates/restaurante/cardapios.html",
+		"/C/projetos/Degustoo/cliente/urls.py",
+		"/C/projetos/Degustoo/cliente/templates/cliente/index.html",
+		"/C/projetos/Degustoo/Degustoo/urls.py",
+		"/C/django/degustoo/administrador/views.py",
+		"/C/django/degustoo/administrador/forms.py",
+		"/C/projetos/Degustoo/administracao/urls.py",
+		"/C/projetos/Degustoo/administracao/templates/administracao/base.html",
+		"/C/projetos/Degustoo/administracao/templates/administracao/index.html",
+		"/C/django/degustoo/core/forms.py",
+		"/C/django/degustoo/degustoo/settings.py",
+		"/C/django/degustoo/restaurante/urls.py",
+		"/C/projetos/Degustoo/index/admin.py",
+		"/C/projetos/admin_degustoo.txt",
+		"/C/django/degustoo/restaurante/models.py",
+		"/C/django/degustoo/cliente/models.py",
+		"/H/degustoo_project.json",
+		"/C/django/degustoo/core/models.py",
+		"/C/django/degustoo/manage.py",
+		"/C/projetos/Degustoo/manage.py",
+		"/C/django/degustoo/restaurante/forms.py",
+		"/C/django/degustoo/restaurante/views.py",
+		"/C/django/degustoo/cliente/admin.py",
+		"/C/django/degustoo/restaurante/templates/restaurante/cardapio/editar_item.html",
+		"/C/django/degustoo/restaurante/templates/restaurante/cardapio/editar_cardapio.html",
+		"/C/django/degustoo/restaurante/templates/restaurante/base.html",
+		"/C/django/degustoo/restaurante/templates/restaurante/base-card.html",
+		"/C/django/degustoo/restaurante/templates/restaurante/cardapios.html",
+		"/C/django/degustoo/index/views.py",
+		"/C/django/degustoo/restaurante/static/restaurante/js/deg_restaurante.js"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\django\\degustoo\\static\\css",
+			"C:\\_django\\_user\\mysite"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lightbox",
+			"overlay_do_wall",
+			"confirmacao",
+			"responsavel",
+			"nome responsavel completo",
+			"getEvery",
+			"set",
+			"getEverySubmenu",
+			"getEvery",
+			"getEveryItem",
+			"get",
+			"set",
+			"getEvery",
+			"getEveryMenuFromRestaurant",
+			"get",
+			"set",
+			"get",
+			"getEvery",
+			"getEveryMenuFrom",
+			"OpcaoMixin",
+			"test",
+			"testMessage",
+			"getEveryOption",
+			"getEveryOptionFromMenu",
+			"getEverySubmenuFromMenu",
+			"getEverySubmenu",
+			"getEverySubmenuFromMenu",
+			"getEveryMenuFromRestaurant",
+			"getEverySubmenuFromMenu",
+			"getEverySubmenu",
+			"getEveryItem",
+			"menuTitleIsUnique",
+			"<span class=\"deg_fpanel_closer\">X</span>",
+			"_build",
+			"getAll",
+			"closer",
+			"deg_fpanel_closer",
+			"BASE_DIR",
+			"99ff33",
+			"):\n",
+			"manage.py",
+			"polls\\urls.py",
+			"polls/urls.py",
+			"polls\\urls",
+			"manage.py",
+			"/templates/*",
+			"/templates",
+			"/manage.py",
+			"manage.py",
+			"manage",
+			"manage.py"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"deg-lightbox",
+			"deg-overlay",
+			"Confirmação",
+			"responsável",
+			"",
+			"getEvery_submenu",
+			"getEvery_item",
+			"getEvery_menu",
+			"getEverySubmenu",
+			"<a class=\"deg_fpanel_closer\">X</a>",
+			"build",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/projetos/Degustoo/restaurante/admin.py",
+					"settings":
+					{
+						"buffer_size": 277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/projetos/Degustoo/degAuth/models.py",
+					"settings":
+					{
+						"buffer_size": 2400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1450,
+								1450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 660.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/projetos/Degustoo/index/templates/index/base.html",
+					"settings":
+					{
+						"buffer_size": 4588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4302,
+								4302
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1242.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/projetos/Degustoo/index/templates/index/base2.html",
+					"settings":
+					{
+						"buffer_size": 2470,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2336,
+								2336
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1251.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/projetos/Degustoo/index/static/index/css/degustoo.css",
+					"settings":
+					{
+						"buffer_size": 7374,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5163,
+								5119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3105.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"clivi",
+				"cliente/views.py"
+			],
+			[
+				"restmodel",
+				"restaurante/models.py"
+			],
+			[
+				"admform",
+				"administracao/forms.py"
+			],
+			[
+				"resform",
+				"restaurante/forms.py"
+			],
+			[
+				"indexurls",
+				"index/urls.py"
+			],
+			[
+				"resadmin",
+				"restaurante/admin.py"
+			],
+			[
+				"restmodels",
+				"restaurante/models.py"
+			],
+			[
+				"restamixi",
+				"restaurante/mixins.py"
+			],
+			[
+				"views",
+				"administracao/views.py"
+			],
+			[
+				"degauthmodel",
+				"degAuth/models.py"
+			],
+			[
+				"cliviews",
+				"cliente/views.py"
+			],
+			[
+				"admviews",
+				"administracao/views.py"
+			],
+			[
+				"adminre",
+				"administracao/templates/administracao/registrar_restaurante.html"
+			],
+			[
+				"adminviews",
+				"administracao/views.py"
+			],
+			[
+				"indexforms",
+				"index/forms.py"
+			],
+			[
+				"adminforms",
+				"administracao/forms.py"
+			],
+			[
+				"authmodels",
+				"degAuth/models.py"
+			],
+			[
+				"settings",
+				"Degustoo/settings.py"
+			],
+			[
+				"models",
+				"cliente/models.py"
+			],
+			[
+				"resturls",
+				"restaurante/urls.py"
+			],
+			[
+				"coreadmin",
+				"core/admin.py"
+			],
+			[
+				"restaurantemodels",
+				"restaurante/models.py"
+			],
+			[
+				"model",
+				"core/models.py"
+			],
+			[
+				"indexviews",
+				"index/views.py"
+			],
+			[
+				"restauranteforms",
+				"restaurante/forms.py"
+			],
+			[
+				"view",
+				"restaurante/views_default.py"
+			],
+			[
+				"coremodels",
+				"core/models.py"
+			],
+			[
+				"fpanel",
+				"index/static/index/fonts/glyphicons-halflings-regular.svg"
+			],
+			[
+				"php",
+				"www/wordpress/wp-includes/class-phpass.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/D/git.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 337.0,
+	"status_bar_visible": true
+}

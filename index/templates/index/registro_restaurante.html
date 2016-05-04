@@ -1,0 +1,17 @@
+{% extends 'index/base.html' %}
+
+{% block content %}
+
+	<div class="deg-regform">
+		<form method="POST" action="" role="form">
+			{% csrf_token %}
+			{% for field in form.visible_fields %}
+				<div class="form-group">
+					<label for="" class="col-sm-2">{{field.label}}</label>
+					<div class="col-sm-10">{{field}}</div>
+				</div>
+			{% endfor %}
+		</form>
+	</div>
+	
+{% endblock %}
