@@ -49,7 +49,7 @@ DEGUSTOO_APPS = (
 
 THIRD_PART_APPS = (
     'rest_framework',
-    'compressor',
+    # 'compressor',
     # 'hamlpy',
     # 'djaml',
 )
@@ -138,7 +138,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 
     #'djangobower.finders.BowerFinder',
-    'compressor.finders.CompressorFinder',
+    #'compressor.finders.CompressorFinder',
 )
 
 COMPRESS_ENABLED = True
@@ -156,10 +156,10 @@ COMPRESS_URL = STATIC_URL
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    'hamlpy.template.loaders.HamlPyFilesystemLoader',
-    'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
-    'djaml.loaders.DjamlFilesystemLoader',
-    'djaml.loaders.DjamlAppDirectoriesLoader',
+    # 'hamlpy.template.loaders.HamlPyFilesystemLoader',
+    # 'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+    # 'djaml.loaders.DjamlFilesystemLoader',
+    # 'djaml.loaders.DjamlAppDirectoriesLoader',
 )
 
 TEMPLATE_DIRS = (

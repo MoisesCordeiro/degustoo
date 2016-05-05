@@ -1,28 +1,35 @@
 {% extends 'index/base.html' %}
 
 {% block content %}
-	<div class="deg-main-container">
-	    <div class="deg-hungry">
-	        <h1>Chega de blá blá blá!</h1>
-	        <h1>Peça sua comida na Degustoo</h1>
-	        <h2>Os melhores restaurantes da sua cidade est?o aqui</h2>
+	<div class='deg-main-container'>
+		<div class='deg-hungry'>
+			<h1>Chega de blá blá blá</h1>
+			<h1>Peça sua comida na degustoo</h1>
+			<h2>Os melhores restaurantes da sua cidade estão aqui</h2>
 
-	        <div class="deg-cep-form">
-	            <form>
-	                <input id="cepcode" type="tel" maxlength="8" name="postcode" placeholder="Informe seu CEP" keydown="alert()">
-	                <button id="searchcep" type="submit" name="search CEP" value="Buscar Restaurantes">Buscar Restaurantes</button>
-	            </form>
-	            <a id="deg-postcode">
-	                <span>Não sabe seu CEP? Clique aqui!</span>
-	            </a>
-	        </div>
-
-	        <div id="mobile-link">
-	            <span>Disponível também em</span>
-	            <a href="" id="play-store" target="_blank" title="Disponível na Play Store">Disponível na Play Store</a>
-	            <a href="" id="app-store" target="_blank" title="Disponível na App Store">Disponível na App Store</a>
-	            <a href="" id="windows-store" target="_blank" title="Disponível na Windows Store">Disponível na Windows Store</a>
-	        </div>
-	    </div>
+			<div class='deg-cep-form'>
+				<form>
+					<input id='cepcode' type='tel' keydown='alert()' name='postcode' maxlength='8' placeholder='Informe seu CEP' />
+					<button id='searchcep' type='submit' name='search CEP' value='Buscar Restaurantes'>
+						Buscar Restaurantes
+					</button>
+				</form>
+				<a id='deg-postcode'>
+					<span>Não sabe seu CEP? Clique aqui!</span>
+				</a>
+			</div>
+			<div id='mobile-link'>
+				<span>Disponível também em</span>
+				<a id='play-store' title='Disponível na Play Store' target='_blank' href='#'>
+					Disponível na Play Store
+                <a id='app-store' title='Disponível na App Store' target='_blank' href='#'>
+                 Disponível na App Store
+                </a>
+                <a id='windows-store' title='Disponível na Windows Store' target='_blank' href='#'>
+                 Disponível na Windows Store
+                </a>
+				</a>
+			</div>
+		</div>
 	</div>
 {% endblock %}
