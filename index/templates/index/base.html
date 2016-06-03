@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		<title>
+			{% block title %}
+				Degustoo
+			{% endblock %}
+		</title>
+		<link rel='stylesheet' href='{% static "index/css/bootstrap.min.css" %}' />
+		<link rel='stylesheet' href='{% static "index/css/_degustoo.css" %}' />
+		<link rel='stylesheet' href='{% static "index/css/style.css" %}' />
+		<link rel='stylesheet' href='{% static "index/css/pure-min.css" %}' />
+
+		<script src='{% static "index/js/jquery.min.js" %}'></script>
+		<script src='{% static "index/libs/jquery/jquery.mask.js" %}'></script>
+		<script src='{% static "index/js/bootstrap.js" %}'></script>
+		<script src='{% static "index/js/degustoo.js" %}'></script>
+		<script src='{% static "index/js/angular.js" %}'></script>
+        
+        <style>
+            .dropdown-menu{
+                width: 100%;
+            }
+        </style>
+
+		{% block scripts %}
+		{% endblock %}
+		{% block styles %}
+		{% endblock %}
+
+
+	</head>
+	<body>
+		<nav class='navbar navbar-inverse transparencia' role='navigation'>
+            <div class='container'>
+                <div class='navbar-header'>
+                    <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse'>
+                        <span class='icon-bar'></span>
+                        <span class='icon-bar'></span>
+                        <span class='icon-bar'></span>
+                    </button>
+                    <a class='navbar-brand' href='{% url "index:index" %}'>
+                        <img src='{% static "index/img/main-logo.png" %}' alt='Degustoo'>&nbsp;</img>
+
+                    </a>
+                </div>
+                <div class='collapse navbar-collapse navbar-right'>
+                    <ul class='nav navbar-nav'>
+                        <li>
+                            <a href='#'>Sobre nós</a>
+                        </li>
+                        <li class='dropdown'>
+                            <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                                Donos de restaurante
+                                <span class='caret'></span>
+                            </a>
+                            <ul class='dropdown-menu'>
+                                <li>
+                                    <a href='#'>Degustoo</a>
+                                </li>
+                                <li>
+                                    <a href='{% url "index:registro_restaurante" %}'>Cadastre-se</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='#'>Contato</a>
+                        </li>
+                        <li>
+                            <a href='{% url "index:registrar" %}'>Registrar</a>
+                        </li>
+                        <li>
+                            <a href='{% url "index:login" %}'>Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		<div class='deg-container'>
+			{% block content %}
+			{% endblock %}
+			<footer></footer>
+		</div>
+		<div id='deg-overlay'></div>
+		<div class='deg-lightbox'>
+			<div>
+				<h2 class='deg-lightbox_closer'></h2>
+				<p></p>
+			</div>
+		</div>
+	</body>
+</html>

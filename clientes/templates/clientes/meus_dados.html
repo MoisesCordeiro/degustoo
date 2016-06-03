@@ -1,0 +1,25 @@
+{% extends 'base_cliente.html' %}
+
+{% block content %}
+	<form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% for field in form %}
+            {% if field.name == 'arquivo' or field.name == 'archive' or field.name == 'logo' %}
+                <p class="fieldset-file">
+                    {{ field.label_tag }}
+                    <span class="wrapper">{{ field }}</span>
+                </p>
+            {% else %}
+                <p>
+                    {{ field.label_tag }}
+                    {{ field }}{{ field.errors }}
+                </p>
+            {% endif %}
+        {% endfor %}
+        <p>
+            <input type="submit" class="btn blue" value="Salvar">
+        </p>
+    </form>
+
+{% endblock%}

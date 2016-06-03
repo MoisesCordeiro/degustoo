@@ -1,0 +1,207 @@
+{% extends 'index/base.html' %}
+
+{% block scripts %}
+<script type='text/javascript'>
+// <![CDATA[
+		$(document).ready(function(){
+			$('.form_ajax').submit(function(evt){
+				evt.preventDefault();
+				$.ajax({
+					type: evt.target.method,
+					url: evt.target.action,
+					data: $(this).serialize(),
+					beforeSend: function(){
+						cleanErrorList();
+						$('input').removeClass('has-error');
+						window.scrollTo(0, 0);
+					},
+					success: function(data){
+						// Do something and show success message
+                        clean_inputs();
+						$('.alert-success').show();
+						setTimeout(function(){
+							$('.alert-success').hide(5000);
+						}, 3000);
+					},
+					error: function(data){
+						errors = JSON.parse(data.responseText);
+						for(e in errors){
+							id = '#' + e;
+							$(id).addClass('has-error');
+							$(id).parent('div').children('.error_list').append('<li>'+errors[e]+'</li>');
+						}
+						$('.alert-danger').show();
+						setTimeout(function(){
+							$('.alert-danger').hide(5000);
+						}, 3000);
+					}
+				});
+			});
+
+			$('#cep').blur(function(){
+				var cep = this.value.replace(/[^0-9]/, "");
+				if(cep.length != 8){
+					return false;
+				}
+
+				var url = "http://viacep.com.br/ws/"+cep+"/json/";
+				$.getJSON(url, function(data){
+					try{
+						$('#rua').val(data.logradouro);
+						$('#bairro').val(data.bairro);
+						$('#municipio').val(data.localidade);
+						$('#estado').val(data.uf);
+					}catch(ex){console.log(ex);}
+				});
+			});
+
+			function cleanErrorList(){
+				$('.error_list').empty();
+			}
+            function clean_inputs(){
+                $('input').each(function(input){
+                    $(this).val("");
+                });
+            }
+
+			$('#cnpj').mask('00.000.000/0000-00');
+			$('#cep').mask('00000-000');
+
+		});
+
+// ]]>
+</script>
+{% endblock %}
+{% block styles %}
+<style type='text/css'>
+/*<![CDATA[*/
+		form div{
+			margin: 2px 0 2px 0;
+		}
+		form input{
+			height: 45px;
+		}
+		.pure-g{
+			padding: 3px;
+		}
+		legend{
+			font-size: 16px;
+			text-align: center;
+			margin-top: 10px;
+		}
+		.has-error{
+			border-color: red !important;
+		}
+		.error_list{
+			color: red;
+		}
+    
+    .alert-success, .alert-danger{
+        text-align: center;
+        display: none;
+    }
+        
+
+/*]]>*/
+</style>
+{% endblock %}
+{% block content %}
+
+	<div class='alert alert-success'>
+		<strong>Parabéns!</strong> Você foi cadastrado com sucesso! Aguarde a Degustoo entrar em contato com o seu restaurante.
+	</div>
+	<div class='alert alert-danger'>
+		<strong>Atenção!</strong> Existem erros no seu formulário. Por favor, corrija os mesmos e prossiga com o cadastro.
+
+	</div>
+	<div class='pure-g'>
+		<div class='pure-u-1-5'></div>
+		<div class='pure-u-3-5'>
+			<legend>
+				Cadastre seu restaurante na Degustoo e tenha seus produtos disponíveis na web e na aplicação mobile
+			</legend>
+			<form class='form_ajax pure-form pure-g' method='POST' action='/registro_restaurantes/' role='form'>
+				{% csrf_token %}
+				<div class='pure-u-1'>
+					<input id='nome' class='pure-input-1' type='text' name='nome' placeholder='Nome do restaurante' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<input id='telefone' class='pure-input-1' type='text' name='telefone' placeholder='Telefone do restaurante. (Apenas números)' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<input id='cnpj' class='pure-input-1' type='text' name='cnpj' placeholder='CNPJ do restaurante' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<input id='email' class='pure-input-1' type='text' name='email' placeholder='E-mail do restaurante' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-4-5'>
+					<input id='rua' class='pure-input-1' type='text' name='rua' placeholder='Rua' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1-5'>
+					<input id='numero' class='pure-input-1' type='text' name='numero' placeholder='Número' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-3-5'>
+					<input id='bairro' class='pure-input-1' type='text' name='bairro' placeholder='Bairro' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-2-5'>
+					<input id='cep' class='pure-input-1' type='text' name='cep' placeholder='CEP' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-2-5'>
+					<input id='estado' class='pure-input-1' type='text' name='estado' placeholder='Estado' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-3-5'>
+					<input id='municipio' class='pure-input-1' type='text' name='municipio' placeholder='Cidade' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<input id='complemento' class='pure-input-1' type='text' name='complemento' placeholder='Complemento' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<input id='tipo_cozinha' class='pure-input-1' type='text' name='tipo_cozinha' placeholder='Tipo de cozinha' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<div class='pure-u-1-2'>
+						<span>Restaurante faz delivery?</span>
+					</div>
+					<div class='pure-u-1-2'>
+						<select id='faz_delivery' class='pure-input-1-2' name='faz_delivery' placeholder='Restaurante faz delivery?'>
+							<option value='True'>Sim</option>
+							<option value='False'>Não</option>
+						</select>
+					</div>
+				</div>
+				<div class='pure-u-1'>
+					<hr />
+				</div>
+				<div class='pure-u-1'>
+					<input id='nome_completo_responsavel' class='pure-input-1' type='text' name='nome_completo_responsavel' placeholder='Nome completo do responsável' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<input id='email_responsavel' class='pure-input-1' type='text' name='email_responsavel' placeholder='Email do responsável' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<input id='telefone_responsavel' class='pure-input-1' type='text' name='telefone_responsavel' placeholder='Telefone do responsável. (Apenas números)' />
+					<ul class='error_list'></ul>
+				</div>
+				<div class='pure-u-1'>
+					<button class='pure-button pure-input-1 pure-button-primary' type='submit'>Enviar dados</button>
+				</div>
+			</form>
+		</div>
+		<div class='pure-u-1-5'></div>
+	</div>
+{% endblock %}
+

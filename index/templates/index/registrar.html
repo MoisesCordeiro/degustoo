@@ -1,0 +1,33 @@
+{% extends 'index/base.html' %}
+
+{% block content %}
+<style type='text/css'>
+/*<![CDATA[*/
+		legend{
+			text-align: center;
+		}
+
+/*]]>*/
+</style>
+	<div class='pure-g'>
+		<div class='pure-u-1-5'></div>
+		<div class='pure-u-3-5'>
+			<form class='pure-form' method='POST' action='' role='form'>
+				{% csrf_token %}
+				<legend>Cadastre-se na Degustoo</legend>
+				<fieldset class='pure-group'>
+					<input class='pure-input-1' type='text' placeholder='Nome' />
+					<input class='pure-input-1' type='text' placeholder='Sobrenome' />
+					<input class='pure-input-1' type='text' placeholder='Telefone' />
+				</fieldset>
+				<filedset class='pure-group'>
+					<input class='pure-input-1' type='text' placeholder='Email' />
+					<input class='pure-input-1' type='password' placeholder='Senha' />
+					<input class='pure-input-1' type='password' placeholder='Confirmação senha' />
+				</filedset>
+				<button class='pure-button pure-input-1 pure-button-primary' type='submit'>Entrar</button>
+			</form>
+		</div>
+		<div class='pure-u-1-5'></div>
+	</div>
+{% endblock %}

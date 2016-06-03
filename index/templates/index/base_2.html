@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>
+            {% block title %}
+                Degustoo
+            {% endblock %}
+        </title>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="pedir, comida, delivery, região dos lagos, pizza, lanche, hamburguer, entrega, aplicativo, home, food, Cabo Frio, Búzios, São Pedro da Aldeia, Arraial do Cabo, Rio das Ostras, Araruama, Saquarema, Macaé, Campos dos Goytacazes,">
+    <meta name="Description" content="Site e Aplicativo para pedir comida na região dos lagos, Cabo Frio, Buzios, Arraial do Cabo, São Pedro da Aldeia, Rio das Ostras, Macaé, Araruama, Iguaba Grande, Saquarema"/>
+    <link rel="icon" href="img/icon 48px.png" type="image/x-icon">
+        <link rel='stylesheet' href='{% static "index/css/bootstrap.min.css" %}' />
+        <link rel='stylesheet' href='{% static "index/css/pure-min.css" %}' />
+<!-- %link{rel:'stylesheet', href:'{% static "index/css/degustoo.css" %}'} -->
+<!-- %link{rel:'stylesheet', href:'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'} -->
+        <link rel='stylesheet' href='{% static "index/css/style.css" %}' />
+        <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' />
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' />
+
+        <script src='{% static "index/js/jquery.min.js" %}'></script>
+        <script src='{% static "index/js/bootstrap.js" %}'></script>
+<script type='text/javascript'>
+// <![CDATA[
+            $(document).ready(function(){
+
+                $(".deg-lightbox_container").click(function(){
+                    $(this).children('.deg-lightbox').css("display", "block");
+                    /*$('.deg-lightbox').css("display", "block");*/
+                    $('#deg-overlay').css('display', 'block');
+                });
+
+                $('.deg-lightbox_closer').click(function(){
+                    /*$(this).parent().parent(".deg-lightbox").css("display", "none");*/
+                    /*$('.deg-lightbox').css("display", "none");*/
+                    /*$('#deg-overlay').css('display', 'none');*/
+                    console.log($(this).parent().parent().fadeOut());
+                    $('#deg-overlay').fadeOut();
+                });
+
+                $("#deg-overlay").click(function(){
+                    $('.deg-lightbox').css("display", "none");
+                    $(this).css("display", "none");
+                });
+
+            });
+
+// ]]>
+</script>
+
+<style type="text/css">
+
+    @media only screen and (max-width: 728px) {
+
+            .propag {
+                position: relative;
+                width: 100%;
+                top: 10px;
+                margin: 0 10px;
+                text-align: center;
+                box-sizing: border-box;
+                color: #fff;
+                text-shadow: 0px 0px 10px rgba(40, 34, 30, 0.9);
+                padding: 5px;
+            }
+
+            .propag h1{
+                font-size: 20px;
+
+            }
+            .propag h2{
+                font-family: 'Roboto', sans-serif;
+                font-size: 15pt;
+                font-weight: lighter;
+                font-style: italic;
+                line-height: 1.5;
+            }
+
+            .postcode{
+                position: relative;
+                background: rgba(40, 34, 30, 0.3);
+                top: 10px;
+                width: 90%;
+                padding: 2%;
+                margin: auto;
+                border-radius: 1px;
+                text-align: center;
+                box-shadow: 0px 0px 20px #7A7A7A;
+                margin: 10px 0;
+            }
+            .postcode input{
+                width: 90%;
+                margin-top: 3%;
+                border-radius: 3px;
+                padding: 2%;
+                color: black;
+                text-align: left;
+                font-size: x-large;
+            }
+            .postcode button{
+                background: #00B800;
+                width: 90%;
+                margin-top: 1%;
+                padding: 2%;
+                border: green;
+                font-weight: bolder;
+                font-size: x-large;
+                color: #fff;
+                border-radius: 2px;
+            }
+            .postcode p{
+                margin: 1% auto; !important;
+            }
+
+            #mobile-link{
+                width: 100%;
+                position: relative;
+                text-align: center;
+                box-sizing: border-box;
+                margin-bottom: 3%;
+            }
+            #mobile-link span {
+                display: block;
+                color: #fff;
+                font-size: 10pt;
+                margin-bottom: 1%;
+            }
+            a#play-store {
+                background: url("/static/index/img/play-store.png");
+                background-repeat: no-repeat;
+                background-color: rgba(40, 34, 30, 0.5);
+                background-position: center;
+            }
+            a#app-store {
+                background: url("/static/index/img/app-store.png");
+                background-repeat: no-repeat;
+                background-color: rgba(40, 34, 30, 0.5);
+                background-position: center;
+            }
+           /* a#windows-store {
+                background: url("/static/index/img/windows-store.png");
+                background-repeat: no-repeat;
+                background-size: 110px;
+                background-color: rgba(40, 34, 30, 0.5);
+                width: 135px;
+                height: 50px;
+                background-position: center;
+            }*/
+            #mobile-link a {
+                margin: 10px;
+                display: inline-block;
+                width: 135px;
+                height: 50px;
+                text-indent: -99999999px;
+                background-color: rgba(40, 34, 30, 0.5);
+                border-radius: 2px;
+            }
+            .middle{
+                position: relative;
+                padding: 10px;
+            }
+            .middle h2 {
+                position: relative;
+                width: 100%;
+                text-align: center;
+                margin: 10px auto;
+                color: #858484;
+                font-size: 15px;
+                font-weight: 600;
+
+            }
+
+            div#foursteps{
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            div#foursteps ul {
+                padding: 0;
+            }
+            div#foursteps li {
+                width: 100%;
+                list-style: none;
+                text-align: center;
+                color: #333;
+                position: relative;
+                min-height: 83px;
+                margin: 10px auto;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            div#foursteps h2 {
+                margin: 10px auto;
+            }
+            div.description {
+                font-size: 16px;
+                color: #444;
+                margin: 0 auto;
+                line-height: 1.3;
+                font-weight: 200;
+            }
+            #step-one::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/localizeme.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 20%;
+                height: 100px;
+                margin: 0 auto;
+                box-sizing: border-box;
+                background-size: 90%;
+            }
+            #step-two::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/menu.png");
+                  background-repeat: no-repeat;
+                background-position: center;
+                width: 20%;
+                height: 100px;
+                margin: 0 auto;
+                box-sizing: border-box;
+                background-size: 90%;
+            }
+            #step-three::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/paying.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 20%;
+                height: 100px;
+                margin: 0 auto;
+                box-sizing: border-box;
+                background-size: 90%;
+            }
+            #step-four::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/delivery.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 20%;
+                height: 100px;
+                margin: 0 auto;
+                box-sizing: border-box;
+                background-size: 90%;
+            }
+
+            .footer{
+                background-color: #333;
+                width: 100%;
+                clear: both;
+                bottom: 0;
+                color: white;
+                padding: 5px;
+            }
+
+            .row {
+                padding: 0 auto !important;
+            }
+
+            .site-map{
+                display: flex;
+                padding: 10px 15px;
+            }
+
+            .site-map ul {
+                margin: 0 8px;
+                padding: 0;
+                text-align: center;
+                font-size: 9pt;
+            }
+            .site-map ul li:first-child{
+                font-weight: 700;
+            }
+            .site-map ul li{
+                margin-bottom: 10px;
+            }
+            .site-map li{
+                list-style-type: none;
+            }
+
+
+
+
+
+
+                                    }
+</style>
+/*end mobile layout*/
+
+<style type='text/css'>
+/*<![CDATA[*/
+            body{
+                padding: 0 !important;
+                font-family: Helvetica;
+            }
+            h2{
+                display: block;
+                font-size: 1.5em;
+                -webkit-margin-before: 0.83em;
+                -webkit-margin-after: 0.83em;
+                -webkit-margin-start: 0px;
+                -webkit-margin-end: 0px;
+                font-weight: bold;
+            }
+
+            .transparencia {
+                background-color: transparent;
+                border-color: transparent;
+            }
+         .top{
+                background-image: url("/static/index/img/hamback2.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                top: 0;
+            }
+            .overlay{
+                background-color: rgba(0,0,0,0.3);
+                width: 100%;
+                height:100%;
+            }
+            .overlay *{
+                text-align: center;
+                color: white;
+            }
+            .top_content{
+                width: 100%;
+            }
+            .top_content .content{
+                margin: 0 auto;
+            }
+            .top_content h1{
+                font-family: 'Satisfy', cursive;
+                font-weight: normal;
+            }
+
+            .top_content h2{
+                font-family: 'Roboto', sans-serif;
+                font-weight: normal;
+                font-size: 22px;
+            }
+
+            .deg-lightbox{
+                position: fixed;
+                margin:0;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: red;
+                z-index: 9999;
+                display: none;
+            }
+
+            #deg-overlay{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0,0,0,0.6);
+                z-index: 999;
+                display: none;
+            }
+
+            .collapse{
+                margin-top: 23px;
+            }
+
+            .navbar-nav a{
+                color: #FfF !important;
+            }
+
+            .dropdown-menu{
+                width: 100%;
+            }
+            .dropdown-menu a{
+                color: black !important;
+            }
+
+            .propag {
+                position: relative;
+                width: 100%;
+                top: 10px;
+                margin: auto;
+                text-align: center;
+                box-sizing: border-box;
+                color: #fff;
+                text-shadow: 0px 0px 10px rgba(40, 34, 30, 0.9);
+            }
+            .propag h2{
+                font-family: 'Roboto', sans-serif;
+                font-weight: normal;
+                font-size: 22px;
+            }
+
+            .postcode{
+                position: relative;
+                / background: rgba(40, 34, 30, 0.3);
+                top: 10px;
+                width: 400px;
+                height: 200px;
+                margin: auto;
+                border-radius: 1px;
+                text-align: center;
+                box-shadow: 0px 0px 20px #7A7A7A;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .postcode input{
+                width: 300px;
+                height: 50px;
+                margin-top: 30px;
+                border-radius: 3px;
+                font-size: 16px;
+                padding: 10px;
+                color: black;
+                text-align: left;
+                font-size: x-large;
+            }
+            .postcode button{
+                background: #00B800;
+                width: 300px;
+                height: 50px;
+                margin-top: 20px;
+                border: green;
+                font-weight: bolder;
+                font-size: 20px;
+                color: #fff;
+                border-radius: 2px;
+            }
+            .postcode p{
+                margin-top: 10px !important;
+            }
+
+            #mobile-link{
+                position: relative;
+                text-align: center;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+            }
+            #mobile-link span {
+                display: block;
+                color: #fff;
+                font-size: 10pt;
+                margin-bottom: 10px;
+            }
+            a#play-store {
+                background: url("/static/index/img/play-store.png");
+                background-repeat: no-repeat;
+                background-color: rgba(40, 34, 30, 0.5);
+                width: 135px;
+                height: 50px;
+                background-position: center;
+            }
+            a#app-store {
+                background: url("/static/index/img/app-store.png");
+                background-repeat: no-repeat;
+                background-color: rgba(40, 34, 30, 0.5);
+                width: 135px;
+                height: 50px;
+                background-position: center;
+            }
+            a#windows-store {
+                background: url("/static/index/img/windows-store.png");
+                background-repeat: no-repeat;
+                background-size: 110px;
+                background-color: rgba(40, 34, 30, 0.5);
+                width: 135px;
+                height: 50px;
+                background-position: center;
+            }
+            #mobile-link a {
+                margin: 0 1.4em 0;
+                display: inline-block;
+                width: 135px;
+                height: 50px;
+                text-indent: -99999999px;
+                background-color: rgba(40, 34, 30, 0.5);
+                border-radius: 2px;
+            }
+
+            .middle{
+                position: relative;
+            }
+            .middle h2 {
+                position: relative;
+                width: 100%;
+                text-align: center;
+                margin: 20px auto;
+                color: #545454;
+                font-size: 18px;
+            }
+
+            div#foursteps{
+                margin: 0 120px;
+            }
+               div#foursteps ul {
+                padding: 0;
+            }
+            div#foursteps li {
+                float: left;
+                width: 25%;
+                list-style: none;
+                text-align: center;
+                color: #333;
+                position: relative;
+                min-height: 83px;
+                margin: 20px 0;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            div.description {
+                font-size: 16px;
+                color: #444;
+                margin: 0;
+                line-height: 1.6;
+                font-weight: 400;
+            }
+            #step-one::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/localizeme.png");
+                background-repeat: no-repeat;
+                background-position: top center;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 5px auto;
+                box-sizing: border-box;
+            }
+            #step-two::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/menu.png");
+                background-repeat: no-repeat;
+                background-position: top center;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 5px auto;
+                box-sizing: border-box;
+            }
+            #step-three::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/paying.png");
+                background-repeat: no-repeat;
+                background-position: top center;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 5px auto;
+                box-sizing: border-box;
+            }
+            #step-four::before{
+                content: " ";
+                display: block;
+                background-image: url("/static/index/img/delivery.png");
+                background-repeat: no-repeat;
+                background-position: top center;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 5px auto;
+                box-sizing: border-box;
+            }
+
+            .footer{
+                background-color: #333;
+                width: 100%;
+                height: 200px;
+                clear: both;
+                bottom: 0;
+                color: white;
+            }
+            .footer{
+                padding: 10px;
+            }
+
+            .site-map{
+                display: flex;
+            }
+            .site-map ul li:first-child{
+                font-weight: 700;
+            }
+            .site-map ul li{
+                margin-bottom: 10px;
+            }
+            .site-map li{
+                list-style-type: none;
+            }
+
+/*]]>*/
+</style>
+    </head>
+    <body>
+     <div class='top'>
+            <div class='overlay'>
+                <div class='nav'>
+                    <nav class='navbar navbar-inverse transparencia' role='navigation'>
+                        <div class='container'>
+                            <div class='navbar-header'>
+                                <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse'>
+                                    <span class='icon-bar'></span>
+                                    <span class='icon-bar'></span>
+                                    <span class='icon-bar'></span>
+                                </button>
+                                <a class='navbar-brand' href='{% url "index:index" %}'>
+                                    <img src='{% static "index/img/main-logo.png" %}' alt='Degustoo'>&nbsp;</img>
+
+                                </a>
+                            </div>
+                            <div class='collapse navbar-collapse navbar-right'>
+                                <ul class='nav navbar-nav'>
+                                    <li>
+                                        <a href='#'>Sobre nós</a>
+                                    </li>
+                                    <li class='dropdown'>
+                                        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                                            Donos de restaurante
+                                            <span class='caret'></span>
+                                        </a>
+                                        <ul class='dropdown-menu'>
+                                            <li>
+                                                <a href='#'>Degustoo</a>
+                                            </li>
+                                            <li>
+                                                <a href='{% url "index:registro_restaurante" %}'>Cadastre-se</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href='#'>Contato</a>
+                                    </li>
+                                    <li>
+                                        <a href='{% url "index:registrar" %}'>Registrar</a>
+                                    </li>
+                                    <li>
+                                        <a href='{% url "index:login" %}'>Login</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class='top_content'>
+                    <div class='content'>
+                        <div class='propag'>
+                            <h1>Tá com fome? Peça sua comida online!</h1>
+                            <h2>Os melhores restaurantes da sua cidade estão aqui.</h2>
+                        </div>
+                        <div class='postcode'>
+                            <input id='cepcode' placeholder='Informe seu CEP' maxlength='8' type='tel' keydown='alert()' name='postcode' />
+                            <button id='searchcep' name='search CEP' type='submit' value='Buscar Restaurantes'>
+                                Buscar Restaurantes
+                            </button>
+                            <a href='#'>
+                                <p>Não sabe seu CEP? Clique aqui!</p>
+                            </a>
+                        </div>
+                        <div id='mobile-link'>
+                            <span>Disponível também em</span>
+                            <a id='play-store' title='Disponível na Play Store' href='#' target='_blank'>Disponível na Play Store</a>
+                            <a id='app-store' title='Disponível na App Store' href='#' target='_blank'>Disponível na App Store</a>
+<!-- %a#windows-store{href:'#', target:'_blank', title:'Disponível na Windows Store'} Disponível na Windows Store -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+     </div>
+    </body>
+    <div class='middle'>
+        <h2>Com apenas 4 passos simples você pede sua comida para poder degustar.</h2>
+        <div id='foursteps'>
+            <ul>
+                <li id='step-one'>
+                    <h2>1º. Informe</h2>
+                    <div class='description'>
+                        Informe seu endereço para encontrar restaurantes.
+                    </div>
+                </li>
+                <li id='step-two'>
+                    <h2>2º. Escolha</h2>
+                    <div class='description'>
+                        Escolha o restaurante e comida que preferir no cardápio.
+                    </div>
+                </li>
+                <li id='step-three'>
+                    <h2>3º. Pague</h2>
+                    <div class='description'>
+                        Pague de acordo com a opção que escolher. É fácil e rápido.
+                    </div>
+                </li>
+                <li id='step-four'>
+                    <h2>4º. Pronto</h2>
+                    <div class='description'>
+                        O restaurante prepara seu pedido e entrega.
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class='footer'>
+        <div class='row'>
+            <div class='col-md-2'>
+                
+<!-- %img{src:'{% static "index/img/main-logo.png" %}', alt:'Degustoo'} &nbsp; -->
+            </div>
+            <div class='col-md-5'>
+                <div class='site-map'>
+                    <ul>
+                        <li>Sobre a Degustoo</li>
+                        <li>Termos e condições de uso</li>
+                        <li>Privacidade</li>
+                    </ul>
+                    <ul>
+                        <li>Donos de Restaurante</li>
+                        <li>Sobre a Degustoo</li>
+                        <li>Cadastrar-se</li>
+                    </ul>
+                    <ul>
+                        <li>Contato</li>
+                        <li>Como pedir</li>
+                        <li>Fale conosco</li>
+                        <li>Trabalhe conosco</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='col-md-5'>
+                
+            </div>
+        </div>
+    </div>
+</html>
